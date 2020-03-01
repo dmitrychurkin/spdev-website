@@ -9,7 +9,7 @@ const AppStoreProvider: FC = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialAppState);
   const actions = useActions(state, dispatch);
   return (
-    <AppStoreContext.Provider value={{ state, dispatch, actions }}>
+    <AppStoreContext.Provider value={{ state, actions }}>
       {children}
     </AppStoreContext.Provider>
   );
@@ -17,7 +17,6 @@ const AppStoreProvider: FC = ({ children }) => {
 
 export interface IAppContext {
   state?: IAppState;
-  dispatch?: Function;
   actions?: IAppActions;
 }
 
