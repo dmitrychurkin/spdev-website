@@ -74,10 +74,14 @@
   padding: 0;
 }
 
-:root,
-body {
-  --main-font-family: "Sansation", sans-serif;
-  font-family: var(--main-font-family);
+:root {
+  --font-family: "Sansation", sans-serif;
+  --dark-gray: #333;
+  --grey: #666;
+  --green: #9fcc16;
+  --orange: #f78d1e;
+  --blue: #1eadf7;
+  font-family: var(--font-family);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -26,13 +26,17 @@
 
 .App-link {
   color: #61dafb;
+} */
+
+.root {
+  animation: show-app 2s;
 }
 
-@keyframes App-logo-spin {
+@keyframes show-app {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
   }
 }
