@@ -1,19 +1,12 @@
 import React, { memo, FC } from "react";
-import { useTranslation } from "react-i18next";
 import Preloader from "./Preloader";
+import Landing from "./Landing";
 
-const App: FC = () => {
-  const { t, i18n } = useTranslation();
-
-  return (
-    <>
-      <Preloader />
-      <div>
-        <h1>Current language {i18n.language}</h1>
-        <h2>{t("hello")}</h2>
-      </div>
-    </>
-  );
-};
+const App: FC = () => (
+  <>
+    <Preloader />
+    <Landing />
+  </>
+);
 
 export default memo(App);
