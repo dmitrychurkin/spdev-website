@@ -1,0 +1,6 @@
+.root {
+  height: 12.0625rem;
+  background: var(--background);
+  opacity: .9;
+  padding: 3rem 17.8125rem;
+}
