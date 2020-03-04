@@ -4,4 +4,14 @@
   border-radius: 24px;
   border: 2px solid #fff;
   padding: 12px 24px;
+  letter-spacing: .047rem;
+  font-weight: bold;
+  font-family: inherit;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  text-transform: uppercase;
+  color: #fff;
+  outline: transparent;
+  cursor: pointer;
+  white-space: nowrap
 }
