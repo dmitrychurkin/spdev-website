@@ -1,8 +1,9 @@
 .root {
+  --stripe-padding: 3rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
   background: var(--background);
-  opacity: .9;
-  padding: 3rem;
+  opacity: 0.9;
+  padding: var(--stripe-padding);
 }

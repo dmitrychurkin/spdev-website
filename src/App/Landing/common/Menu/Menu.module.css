@@ -1,0 +1,119 @@
+.root {
+  width: 5rem;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  bottom: 3.375rem;
+  left: 3.375rem;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.hamburger {
+  display: inline-block;
+  cursor: pointer;
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background: #222;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.2),
+    0 0.063rem 0.625rem rgba(0, 0, 0, 0.12),
+    0 0.25rem 0.313rem rgba(0, 0, 0, 0.14);
+  border: 0;
+  border-radius: 50%;
+  margin: 0;
+  overflow: visible;
+  width: 3rem;
+  height: 3rem;
+}
+
+.hamburger:hover {
+  opacity: 0.7;
+}
+
+.hamburger.isActive:hover {
+  opacity: 0.7;
+}
+
+.hamburger.isActive .hamburgerInner,
+.hamburger.isActive .hamburgerInner::before,
+.hamburger.isActive .hamburgerInner::after {
+  background-color: #fff;
+}
+
+.hamburgerBox {
+  width: inherit;
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.hamburgerInner {
+  display: block;
+  top: 50%;
+  margin-top: -0.125rem;
+}
+
+.hamburgerInner,
+.hamburgerInner::before,
+.hamburgerInner::after {
+  width: 1.125rem;
+  height: 0.125rem;
+  background-color: #fff;
+  border-radius: 0.25rem;
+  position: absolute;
+  transition-property: transform;
+  transition-duration: 0.15s;
+  transition-timing-function: ease;
+}
+
+.hamburgerInner::before,
+.hamburgerInner::after {
+  content: "";
+  display: block;
+}
+
+.hamburgerInner::before {
+  top: -0.4rem;
+}
+
+.hamburgerInner::after {
+  bottom: -0.4rem;
+}
+
+.hamburgerSqueeze .hamburgerInner {
+  transition-duration: 0.075s;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.hamburgerSqueeze .hamburgerInner::before {
+  transition: top 0.075s 0.12s ease, opacity 0.075s ease;
+}
+
+.hamburgerSqueeze .hamburgerInner::after {
+  transition: bottom 0.075s 0.12s ease,
+    transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.hamburgerSqueeze.isActive .hamburgerInner {
+  transform: rotate(45deg);
+  transition-delay: 0.12s;
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.hamburgerSqueeze.isActive .hamburgerInner::before {
+  top: 0;
+  opacity: 0;
+  transition: top 0.075s ease, opacity 0.075s 0.12s ease;
+}
+
+.hamburgerSqueeze.isActive .hamburgerInner::after {
+  bottom: 0;
+  transform: rotate(-90deg);
+  transition: bottom 0.075s ease,
+    transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
