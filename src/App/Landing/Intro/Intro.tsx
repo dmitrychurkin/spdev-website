@@ -1,11 +1,11 @@
 import React, { memo } from "react";
-import { Trans } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 import Stripe from "../common/Stripe";
 import Button from "../common/Button";
 import styles from "./Intro.module.css";
 
 const Intro = () => {
-  // const { t } = useTranslation();
+  const { t } = useTranslation();
   return (
     <div className={styles.root}>
       <Stripe className={styles.main}>
@@ -30,6 +30,12 @@ const Intro = () => {
           contact us
         </Button>
       </Stripe>
+      <div className={styles.bottomText}>
+        <div>{t('bottom', 'software of your success')}</div>
+        <svg className={styles.icon}>
+          <use xlinkHref="#arrow_down" />
+        </svg>
+      </div>
     </div>
   );
 };

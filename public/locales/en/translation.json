@@ -1,7 +1,16 @@
 {
-  "menu": "menu",
+  "menu": {
+    "id": "menu",
+    "about_us": "about us",
+    "services": "services",
+    "portfolio": "portfolio",
+    "partners": "partners",
+    "contact_us": "contact us",
+    "location": "location"
+  },
   "intro": {
     "title": "<0>Highly efficient</0> innovative driven software development company.",
-    "sub": "We deliver business and technology innovations from scratch <1/> by using value-added solutions."
+    "sub": "We deliver business and technology innovations from scratch <1/> by using value-added solutions.",
+    "bottom": "software of your success"
   }
 }
