@@ -1,6 +1,9 @@
 import React, { FC, memo } from 'react';
 
-const SectionLabel: FC = ({ children }) => (
+type Props = {
+  readonly children: string;
+};
+const SectionLabel: FC<Props> = ({ children }) => (
   <div>{children}</div>
 );
 

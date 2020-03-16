@@ -1,5 +1,6 @@
 import React, { memo } from "react";
 import { Trans, useTranslation } from "react-i18next";
+import clsx from "clsx";
 import Stripe from "../common/Stripe";
 import Button from "../common/Button";
 import styles from "./Intro.module.css";
@@ -7,7 +8,7 @@ import styles from "./Intro.module.css";
 const Intro = () => {
   const { t } = useTranslation();
   return (
-    <div className={styles.root}>
+    <section className={clsx('sct', styles.root)}>
       <Stripe className={styles.main}>
         <div className={styles.text}>
           <div className={styles.logo}>
@@ -36,7 +37,7 @@ const Intro = () => {
           <use xlinkHref="#arrow_down" />
         </svg>
       </div>
-    </div>
+    </section>
   );
 };
 

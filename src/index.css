@@ -5,6 +5,11 @@
   padding: 0;
 }
 
+.sct {
+  height: 100vh;
+  min-height: var(--min-section-height);
+}
+
 :root {
   --dark-gray: #333;
   --grey: #666;
@@ -12,6 +17,7 @@
   --orange: #f78d1e;
   --blue: #1eadf7;
   --background: #111;
+  --min-section-height: 40rem;
   font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

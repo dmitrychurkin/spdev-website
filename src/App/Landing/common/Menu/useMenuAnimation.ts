@@ -50,7 +50,7 @@ function menuAnimation(navbarEl: HTMLElement, itemElArr: Array<Element>) {
   };
 }
 export default function useMenuAnimation(navbar = '#navigation', item = '.js-item') {
-  const [fn, setFn] = useState<Function | undefined>();
+  const [fn, setFn] = useState<((state: MenuState) => void) | undefined>();
   useEffect(() => {
     const nav = document.querySelector(navbar);
     const it = Array.from(document.querySelectorAll(item));
