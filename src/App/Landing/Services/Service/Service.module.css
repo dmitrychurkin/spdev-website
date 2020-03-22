@@ -1,0 +1,118 @@
+.root {
+  box-shadow: 0 .125rem .3rem rgba(0, 0, 0, .2), 0 .06rem .6rem rgba(0, 0, 0, .12), 0 .3rem .3rem rgba(0, 0, 0, .14);
+  border-radius: .75rem;
+  width: 26.438rem;
+  height: 42.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.root:not(:last-child) {
+  margin-right: 2.563rem;
+}
+
+.root::after {
+  content: '';
+  display: block;
+  width: inherit;
+  height: inherit;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(17, 17, 17, .25) 0%, rgba(17, 17, 17, .75) 100%);
+  transition: opacity .5s;
+  will-change: opacity;
+  opacity: 0;
+}
+
+.root:hover::after {
+  opacity: 1;
+}
+
+.img {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: cover;
+  width: inherit;
+  height: inherit;
+  position: absolute;
+  transform: scale(1.06);
+  z-index: 0;
+  transition: transform .5s;
+  will-change: transform;
+}
+
+.root:hover .img {
+  transform: scale(1.11);
+}
+
+.text {
+  color: #fff;
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column nowrap;
+  transform: translateY(30%);
+  transition: transform .5s;
+  will-change: transform;
+}
+
+.root:hover .text {
+  transform: translateY(8%);
+}
+
+.title {
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .031rem;
+  width: 80%;
+}
+
+.line {
+  padding-bottom: 1.5rem;
+  border-bottom: .16rem solid rgba(255, 255, 255, 0.12);
+  width: 0%;
+  transition: width .5s;
+  will-change: contents;
+}
+
+.root:hover .line {
+  width: 80%;
+}
+
+.description {
+  margin-top: 1rem;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  letter-spacing: .047rem;
+  width: 80%;
+  opacity: 0;
+  transform: translateY(10%);
+  transition: transform .5s, opacity .5s;
+  will-change: transform, opacity;
+}
+
+.root:hover .description {
+  opacity: 1;
+  transform: translate(0);
+}
+
+.dp:last-child {
+  margin-top: 2rem;
+}
+
+.btnWrap {
+  margin-top: 30%;
+  opacity: 0;
+  transition: opacity .5s;
+  will-change: opacity;
+}
+
+.root:hover .btnWrap {
+  opacity: 1;
+}

@@ -14,6 +14,23 @@
     "bottom": "software of your success"
   },
   "services": {
-    "name": "services"
+    "name": "services",
+    "title": "Quis non do tempor sunt ex enim exercitation commodo commodo sint ea elit non <1/> exercitation. Labore reprehenderit nostrud sunt laborum mollit et ut. Est quis sint esse <3/> deserunt cupidatat culpa consequat fugiat labore velit quis.",
+    "site_design": {
+      "title": "<0>site</0> design",
+      "p1": "Tempor deserunt sunt qui occaecat deserunt nulla duis ullamco dolor occaecat exercitation.",
+      "p2": "Sint pariatur duis Lorem in veniam mollit pariatur do dolore laboris sit aliquip."
+    },
+    "site_development": {
+      "title": "<0>site</0> development",
+      "p1": "Tempor deserunt sunt qui occaecat deserunt nulla duis ullamco dolor occaecat exercitation.",
+      "p2": "Sint pariatur duis Lorem in veniam mollit pariatur do dolore laboris sit aliquip."
+    },
+    "app_development": {
+      "title": "<0>app</0> development",
+      "p1": "Tempor deserunt sunt qui occaecat deserunt nulla duis ullamco dolor occaecat exercitation.",
+      "p2": "Sint pariatur duis Lorem in veniam mollit pariatur do dolore laboris sit aliquip."
+    },
+    "read_more": "read more"
   }
 }

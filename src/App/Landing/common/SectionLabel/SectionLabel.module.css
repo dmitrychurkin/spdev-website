@@ -1,0 +1,28 @@
+.root {
+  margin-top: 3.5rem;
+  font-size: 1.1rem;
+  line-height: 1.375rem;
+  font-weight: 500;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: .031rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 3.375rem;
+}
+
+.root::after, .root::before {
+  content: '';
+  display: block;
+  border-bottom: .16rem solid rgba(255, 255, 255, 0.12);
+  width: 100%;
+}
+
+.root::before {
+  margin-right: 2.5rem;
+}
+
+.root::after {
+  margin-left: 2.5rem;
+}
