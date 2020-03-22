@@ -10,6 +10,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 3.375rem;
+  white-space: nowrap;
 }
 
 .root::after, .root::before {

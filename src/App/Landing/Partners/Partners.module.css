@@ -1,0 +1,16 @@
+.cont {
+  margin-top: 9.25rem;
+  margin-bottom: 10rem;
+  display: flex;
+  justify-content: space-around;
+  padding: 0 2rem;
+}
+
+.img {
+  width: 11.25rem;
+  height: 3.75rem;
+}
+
+.img:not(:last-child) {
+  margin-right: 1rem;
+}

@@ -32,5 +32,31 @@
       "p2": "Sint pariatur duis Lorem in veniam mollit pariatur do dolore laboris sit aliquip."
     },
     "read_more": "read more"
+  },
+  "partners": {
+    "name": "partners",
+    "title": "Quis non do tempor sunt ex enim exercitation commodo commodo sint ea elit non <1/> exercitation. Labore reprehenderit nostrud sunt laborum mollit et ut. Est quis sint esse <3/> deserunt cupidatat culpa consequat fugiat labore velit quis."
+  },
+  "contact_us": {
+    "name": "contact us",
+    "contact_form": {
+      "title": "<0>evaluate</0> your <1/> project",
+      "subtitle": "You have an idea, or want to know the approximate cost <1/> of your project?",
+      "name": "Name",
+      "number": "Phone number",
+      "email": "E-mail",
+      "description": "Description"
+    },
+    "contacts": {
+      "title": "<0>connect</0> with us",
+      "subtitle": "Web development is our credo, have a question? Let’s talk!"
+    }
+  },
+  "footer": {
+    "procurement": "Procurement",
+    "accessibility": "Accessibility",
+    "privacy": "Privacy policy",
+    "quality": "Quality policy",
+    "use": "Terms of use"
   }
 }

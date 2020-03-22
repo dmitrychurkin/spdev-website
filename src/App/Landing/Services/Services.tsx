@@ -1,20 +1,20 @@
 import React, { memo } from 'react';
-import clsx from 'clsx';
 import { useTranslation, Trans } from 'react-i18next';
 import SectionLabel from '../common/SectionLabel';
+import SectionTitle from '../common/SectionTitle';
 import Service from './Service';
 import styles from './Services.module.css';
 
 const Services = () => {
   const { t } = useTranslation();
   return (
-    <section className={clsx('sct', styles.root)}>
+    <section className={styles.root}>
       <SectionLabel>{t('services.name', 'services')}</SectionLabel>
-      <div className={styles.title}>
+      <SectionTitle>
         <Trans i18nKey="services.title">
           Quis non do tempor sunt ex enim exercitation commodo commodo sint ea elit non <br /> exercitation. Labore reprehenderit nostrud sunt laborum mollit et ut. Est quis sint esse <br /> deserunt cupidatat culpa consequat fugiat labore velit quis.
         </Trans>
-      </div>
+      </SectionTitle>
       <div className={styles.wrap}>
         <Service
           imageClass={styles.s1}

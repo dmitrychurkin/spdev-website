@@ -1,0 +1,77 @@
+.root {
+  color: #fff;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 8.5rem;
+}
+
+.title {
+  font-size: 2.125rem;
+  line-height: 2.25rem;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-top: 1rem;
+}
+
+.form {
+  max-width: 28rem;
+  width: 100%;
+}
+
+.input {
+  display: block;
+  padding: 1rem .125rem 1rem 1rem;
+  background-color: #222;
+  border-radius: .25rem .25rem 0 0;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  width: 100%;
+  margin-top: 2rem;
+  outline: none;
+  font-size: 1rem;
+  font-family: inherit;
+  line-height: 1.5rem;
+  border-bottom: .06rem solid #fff;
+  resize: none;
+  box-sizing: border-box;
+  transition: border-width .1s;
+}
+
+.input:not(textarea) {
+  height: 3.5rem;
+}
+
+.input:focus {
+  border-bottom-width: .16rem;
+}
+
+.input:first-child {
+  margin-top: 3rem;
+}
+
+.location {
+  margin-top: 5rem;
+}
+
+.contact .subtitle {
+  margin-bottom: 6.75rem;
+}
+
+.location div:first-child {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+}
+
+.location div:not(:last-child) {
+  margin-bottom: .75rem;
+}

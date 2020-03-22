@@ -1,0 +1,38 @@
+.root {
+  background: var(--background);
+}
+
+.logo {
+  width: 12rem;
+  height: 4.063rem;
+  background: url('../spdev_logo.svg') no-repeat;
+  background-size: contain;
+  margin: auto;
+  margin-top: 5rem;
+}
+
+.nav {
+  margin-top: 3.563rem;
+  display: flex;
+  justify-content: center;
+}
+
+.item, .copy {
+  font-size: .875rem;
+  line-height: 1.25rem;
+  letter-spacing: .047rem;
+  color: rgba(255, 255, 255, .6);
+  padding: 0 1rem;
+}
+
+.item:not(:last-child) {
+  border-right: .16rem solid rgba(255, 255, 255, .12);;
+}
+
+.copy {
+  margin-top: 2.5rem;
+  margin-bottom: 5rem;
+  color: rgba(255, 255, 255, .88);
+  line-height: 1.063rem;
+  text-align: center;
+}
