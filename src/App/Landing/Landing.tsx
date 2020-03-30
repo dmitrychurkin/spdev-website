@@ -5,6 +5,7 @@ import IconSet from "./common/IconSet";
 import Services from "./Services";
 import Partners from "./Partners";
 import ContactUs from "./ContactUs";
+import Location from "./Location";
 import Footer from "./Footer";
 
 const Landing = () => (
@@ -13,6 +14,7 @@ const Landing = () => (
     <Services />
     <Partners />
     <ContactUs />
+    <Location />
     <Footer />
     <Menu />
     <IconSet />

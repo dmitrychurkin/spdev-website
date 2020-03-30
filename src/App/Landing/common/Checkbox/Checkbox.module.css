@@ -1,0 +1,136 @@
+.root {
+  --pure-material-onsurface-rgb: 0, 0, 0;
+  --pure-material-primary-rgb: 255, 255, 255;
+  --pure-material-onprimary-rgb: 255, 255, 255;
+  z-index: 0;
+  user-select: none;
+  position: relative;
+  display: inline-block;
+  color: rgba(var(--pure-material-onsurface-rgb), .87);
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.root > input {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  z-index: -1;
+  position: absolute;
+  left: -.625rem;
+  top: -.5rem;
+  display: block;
+  margin: 0;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: rgba(var(--pure-material-onsurface-rgb), .6);
+  box-shadow: none;
+  outline: none;
+  opacity: 0;
+  transform: scale(1);
+  pointer-events: none;
+  transition: opacity .3s, transform .2s;
+}
+
+.root > span {
+  display: inline-block;
+  width: 100%;
+  cursor: pointer;
+  color: rgba(255, 255, 255, .6);
+}
+
+.root > span::before {
+  content: "";
+  display: inline-block;
+  box-sizing: border-box;
+  margin: .188rem .688rem .188rem .063rem;
+  border: solid .125rem; /* Safari */
+  border-color: rgba(255, 255, 255, .6);
+  border-radius: .125rem;
+  width: 1.125rem;
+  height: 1.125rem;
+  vertical-align: top;
+  transition: border-color .2s, background-color .2s;
+}
+
+.root > span::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: .188rem;
+  left: .05rem;
+  width: .625rem;
+  height: .313rem;
+  border: solid .125rem transparent;
+  border-right: none;
+  border-top: none;
+  transform: translate(.188rem, .25rem) rotate(-45deg);
+}
+
+.root > input:checked,
+.root > input:indeterminate {
+  background-color: rgb(var(--pure-material-primary-rgb, 33, 150, 243));
+}
+
+.root > input:checked + span::before,
+.root > input:indeterminate + span::before {
+  border-color: rgb(var(--pure-material-primary-rgb, 33, 150, 243));
+}
+
+.root > input:checked + span::after,
+.root > input:indeterminate + span::after {
+  border-color: rgb(var(--pure-material-onprimary-rgb));
+}
+
+.root > input:indeterminate + span::after {
+  border-left: none;
+  transform: translate(.25rem, .188rem);
+}
+
+.root:hover > input {
+  opacity: .04;
+}
+
+.root > input:focus {
+  opacity: .12;
+}
+
+.root:hover > input:focus {
+  opacity: .16;
+}
+
+.root > input:active {
+  opacity: 1;
+  transform: scale(0);
+  transition: transform 0s, opacity 0s;
+}
+
+.root > input:active + span::before {
+  border-color: rgb(var(--pure-material-primary-rgb));
+}
+
+.root > input:checked:active + span::before {
+  border-color: transparent;
+  background-color: rgba(var(--pure-material-onsurface-rgb), .6);
+}
+
+.root > input:disabled {
+  opacity: 0;
+}
+
+.root > input:disabled + span {
+  color: rgba(var(--pure-material-onsurface-rgb), .38);
+  cursor: initial;
+}
+
+.root > input:disabled + span::before {
+  border-color: currentColor;
+}
+
+.root > input:checked:disabled + span::before,
+.root > input:indeterminate:disabled + span::before {
+  border-color: transparent;
+  background-color: currentColor;
+}

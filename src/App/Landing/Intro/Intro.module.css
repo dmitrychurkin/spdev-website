@@ -15,7 +15,9 @@
   position: absolute;
   /* bottom: 13.75rem; */
   bottom: 22%;
-  width: calc(100% - var(--stripe-padding) * 2); /* refer Stripe.module#.root */
+  /* width: calc(100% - var(--stripe-padding) * 2); refer Stripe.module#.root */
+  left: 0;
+  right: 0;
 }
 
 .logo {

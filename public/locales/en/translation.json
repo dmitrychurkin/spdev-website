@@ -45,11 +45,24 @@
       "name": "Name",
       "number": "Phone number",
       "email": "E-mail",
-      "description": "Description"
+      "description": "Description",
+      "checkbox": "I accept <1>Term of service</1> etc."
     },
     "contacts": {
       "title": "<0>connect</0> with us",
-      "subtitle": "Web development is our credo, have a question? Let’s talk!"
+      "subtitle": "Web development is our credo, have a question? Let’s talk!",
+      "ukraine": "ukraine",
+      "mariupol": "mariupol",
+      "ivano-frankivsk": "ivano-frankivsk",
+      "join": "want to join our team?",
+      "come_here": "Come here"
+    }
+  },
+  "location": {
+    "name": "location",
+    "text": {
+      "title": "<0>Exercitation veniam</0> et sit dolore aute adipisicing <2/> eiusmod adipisicing.",
+      "subtitle": "Quis non do tempor sunt ex enim exercitation commodo <1/> commodo sint ea 2020 non exercitation. Labore reprehenderit <3/> nostrud sunt laborum mollit et ut."
     }
   },
   "footer": {

@@ -27,12 +27,10 @@ const Intro = () => {
             </Trans>
           </div>
         </div>
-        <Button type="button" className={styles.btn}>
-          contact us
-        </Button>
+        <Button type="button" className={styles.btn}>{t('contact_us.name', 'contact us')}</Button>
       </Stripe>
       <div className={styles.bottomText}>
-        <div>{t('bottom', 'software of your success')}</div>
+        <div>{t('intro.bottom', 'software of your success')}</div>
         <svg className={styles.icon}>
           <use xlinkHref="#arrow_down" />
         </svg>

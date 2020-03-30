@@ -1,0 +1,80 @@
+.gap {
+  margin-top: 6.625rem;
+}
+
+.mapWrap {
+  overflow: hidden;
+  max-width: 100%;
+  margin-top: 3.563rem;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.map {
+  height: 100vh;
+  min-height: 48rem;
+}
+
+.text {
+  position: absolute;
+  left: 10%;
+  bottom: 55%;
+  color: rgba(255, 255, 255, .88);
+}
+
+.title {
+  font-size: 1.5rem;
+  line-height: 1.813rem;
+  letter-spacing: .047rem;
+}
+
+.subtitle {
+  margin-top: 2.5rem;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  letter-spacing: .047rem;
+}
+
+.active {
+  fill: #333;
+}
+
+.greenMark {
+  fill: var(--green);
+}
+
+.blueMark {
+  fill: var(--blue);
+}
+
+.stripe {
+  position: absolute;
+  bottom: 2.438rem;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, .38);
+}
+
+.social, .actions {
+  display: flex;
+}
+
+.socialLink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.socialLink svg {
+  width: 1.5rem;
+  height: 1.3rem;
+}
+
+.socialLink:not(:last-child) {
+  margin-right: 2.875rem;
+}
+
+.btn:first-child {
+  margin-right: 2.5rem;
+}

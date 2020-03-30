@@ -26,34 +26,7 @@
   width: 100%;
 }
 
-.input {
-  display: block;
-  padding: 1rem .125rem 1rem 1rem;
-  background-color: #222;
-  border-radius: .25rem .25rem 0 0;
-  border: none;
-  color: rgba(255, 255, 255, 0.6);
-  width: 100%;
-  margin-top: 2rem;
-  outline: none;
-  font-size: 1rem;
-  font-family: inherit;
-  line-height: 1.5rem;
-  border-bottom: .06rem solid #fff;
-  resize: none;
-  box-sizing: border-box;
-  transition: border-width .1s;
-}
-
-.input:not(textarea) {
-  height: 3.5rem;
-}
-
-.input:focus {
-  border-bottom-width: .16rem;
-}
-
-.input:first-child {
+.firstInput {
   margin-top: 3rem;
 }
 
@@ -65,7 +38,7 @@
   margin-bottom: 6.75rem;
 }
 
-.location div:first-child {
+.location div:first-child, .join {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 1.125rem;
@@ -74,4 +47,30 @@
 
 .location div:not(:last-child) {
   margin-bottom: .75rem;
+}
+
+.join {
+  margin-top: 7.7rem;
+}
+
+.checkbox {
+  margin-top: 1.75rem;
+}
+
+.checkboxLabel {
+  color: #fff;
+}
+
+.comeHere {
+  color: var(--blue);
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+  margin-top: 1.75rem;
+}
+
+.comeHereIcon {
+  height: 1.125rem;
+  margin-left: .688rem;
 }
