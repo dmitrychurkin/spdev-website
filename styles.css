@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700|Roboto&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --dark-gray: #333;
+  --grey: #666;
+  --green: #9fcc16;
+  --orange: #f78d1e;
+  --blue: #1eadf7;
+  --background: #111;
+  --min-section-height: 40rem;
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--background);
+  min-width: 81rem;
+}

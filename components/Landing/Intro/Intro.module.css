@@ -1,0 +1,74 @@
+.root {
+  /* min-height: 50rem; */
+  background: linear-gradient(
+      90deg,
+      rgba(17, 17, 17, 0.5) 0%,
+      rgba(17, 17, 17, 0) 100%
+    ),
+    url("./bg.jpg") no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 100vh;
+  min-height: var(--min-section-height);
+}
+
+.main {
+  position: absolute;
+  /* bottom: 13.75rem; */
+  bottom: 22%;
+  /* width: calc(100% - var(--stripe-padding) * 2); refer Stripe.module#.root */
+  left: 0;
+  right: 0;
+}
+
+.logo {
+  background: url("../spdev_logo.svg") no-repeat;
+  height: 15rem;
+  position: absolute;
+  bottom: calc(100% + 5.5rem);
+  width: 40rem;
+  left: -7%;
+}
+
+.logoText {
+  visibility: hidden;
+}
+
+.text {
+  letter-spacing: 0.047rem;
+  color: #fff;
+  position: relative;
+}
+
+.title {
+  font-size: 1.5rem;
+  line-height: 1.813rem;
+}
+
+.sub {
+  margin-top: 1.5rem;
+  font-size: 1.125rem;
+  line-height: 1.375rem;
+  opacity: 0.6;
+}
+
+.btn {
+  margin-left: 3rem;
+}
+
+.bottomText {
+  position: absolute;
+  bottom: 2rem;
+  width: 100%;
+  text-align: center;
+  font-size: .9rem;
+  line-height: 1.5rem;
+  letter-spacing: .109rem;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, .88);
+}
+
+.icon {
+  width: .8rem;
+  height: .5rem;
+}
