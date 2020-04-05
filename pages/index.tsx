@@ -12,7 +12,7 @@ const Home = () => (
   </PageLayout>
 );
 
-Home.getInitialProps = async () => ({
+Home.getInitialProps = () => ({
   namespacesRequired: ['landing']
 })
 

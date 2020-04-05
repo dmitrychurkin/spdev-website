@@ -1,15 +1,18 @@
-import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document'
+import Document, { Html, Head, Main, NextScript } from 'next/document'
 
 class CustomizedDocument extends Document {
-  static async getInitialProps(ctx: DocumentContext) {
-    const initialProps = await Document.getInitialProps(ctx)
-    return initialProps;
-  }
-
   render() {
     return (
       <Html lang={this.props.__NEXT_DATA__.props.initialProps.initialLanguage}>
-        <Head />
+        <Head>
+          <meta charSet="utf-8" />
+          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+          <meta name="theme-color" content="#000000" />
+          <meta name="description" content="Please insert real description here" />
+          <link rel="apple-touch-icon" href="/logo192.png" />
+          <link rel="manifest" href="/manifest.json" />
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
         <body>
           <Main />
           <NextScript />
