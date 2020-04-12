@@ -1,9 +1,9 @@
-import React, { FC, memo } from 'react';
+import React, { FC, memo, useState } from 'react';
 import { useTranslation, Trans } from 'react-i18next';
 import SectionLabel from '../common/SectionLabel';
 import Stripe from '../common/Stripe';
 import Button from '../common/Button';
-import Map from './Map';
+import GoogleMap, { LocationKey } from './GoogleMap';
 import styles from './Location.module.css';
 
 const socialLinks = [
@@ -15,6 +15,10 @@ const socialLinks = [
 ];
 const Location: FC = () => {
   const { t } = useTranslation();
+
+  const [activeLocation, setLocation] = useState<LocationKey>();
+  const onClickHandler = setActiveLocation(setLocation);
+
   return (
     <section>
       <SectionLabel className={styles.gap}>{t('location.name', 'location')}</SectionLabel>
@@ -31,7 +35,7 @@ const Location: FC = () => {
             </Trans>
           </div>
         </div>
-        <Map />
+        <GoogleMap activeLocation={activeLocation} />
         <Stripe className={styles.stripe}>
           <div className={styles.social}>
             {socialLinks.map(({ name, link }) => (
@@ -43,13 +47,17 @@ const Location: FC = () => {
             ))}
           </div>
           <div className={styles.actions}>
-            <Button type="button" className={styles.btn}>{t('contact_us.contacts.ivano-frankivsk', 'ivano-frankivsk')}</Button>
-            <Button type="button" className={styles.btn}>{t('contact_us.contacts.mariupol', 'mariupol')}</Button>
+            <Button onClick={onClickHandler(LocationKey.IVANO_FRANKOVSK)} type="button" className={styles.btn}>{t('contact_us.contacts.ivano-frankivsk', 'ivano-frankivsk')}</Button>
+            <Button onClick={onClickHandler(LocationKey.MARIUPOL)} type="button" className={styles.btn}>{t('contact_us.contacts.mariupol', 'mariupol')}</Button>
           </div>
         </Stripe>
       </div>
     </section>
   );
 };
+
+function setActiveLocation(setState: React.Dispatch<React.SetStateAction<LocationKey | undefined>>) {
+  return (key: LocationKey) => () => setState(key);
+}
 
 export default memo(Location);
