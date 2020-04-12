@@ -1,10 +1,30 @@
 .root {
+  --block-width: 42.5rem;
   box-shadow: 0 .125rem .3rem rgba(0, 0, 0, .2), 0 .06rem .6rem rgba(0, 0, 0, .12), 0 .3rem .3rem rgba(0, 0, 0, .14);
   border-radius: .75rem;
   width: 26.438rem;
-  height: 42.5rem;
+  height: var(--block-width);
   position: relative;
   overflow: hidden;
+  transition: width .5s;
+}
+
+.large {
+  width: 300%;
+}
+
+.small {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.small .title {
+  white-space: nowrap;
+  transform: rotate(-90deg);
+  width: var(--block-width);
+  opacity: 0;
+  animation: appear .5s .5s forwards;
 }
 
 .root:not(:last-child) {
@@ -25,7 +45,7 @@
   opacity: 0;
 }
 
-.root:hover::after {
+.root:not(.active):not(.small):hover::after {
   opacity: 1;
 }
 
@@ -40,9 +60,10 @@
   z-index: 0;
   transition: transform .5s;
   will-change: transform;
+  width: 100%;
 }
 
-.root:hover .img {
+.root:not(.active):not(.small):hover .img {
   transform: scale(1.11);
 }
 
@@ -60,17 +81,13 @@
   will-change: transform;
 }
 
-.root:hover .text {
-  transform: translateY(8%);
+.brief {
+  opacity: 0;
+  animation: appearIn .5s .8s forwards;
 }
 
-.title {
-  font-size: 1.5rem;
-  line-height: 1.5rem;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: .031rem;
-  width: 80%;
+.root:hover .text {
+  transform: translateY(8%);
 }
 
 .line {
@@ -97,7 +114,19 @@
   will-change: transform, opacity;
 }
 
-.root:hover .description {
+.large .description {
+  color: rgba(255, 255, 255, .6);
+  opacity: 1;
+  margin: 0;
+  max-width: 51rem;
+  transform: none;
+}
+
+.large .dp:last-child {
+  margin-top: 1rem;
+}
+
+.root:not(.active):hover .description {
   opacity: 1;
   transform: translate(0);
 }
@@ -115,4 +144,70 @@
 
 .root:hover .btnWrap {
   opacity: 1;
+}
+
+.detail {
+  opacity: 0;
+  animation: appear .5s .5s forwards;
+  position: relative;
+  height: 100%;
+  z-index: 2;
+}
+
+.btn {
+  margin-top: 2.5rem;
+  margin-left: 4.5rem;
+}
+
+.icon {
+  width: .8rem;
+  height: .5rem;
+  transform: rotate(90deg);
+}
+
+.detail .title {
+  margin-top: 2rem;
+  margin-left: 6rem;
+}
+
+.sub {
+  color: #fff;
+  font-size: 2.125rem;
+  line-height: 2.25rem;
+}
+
+.stripe {
+  margin-top: 7rem;
+  padding: 1.5rem 6rem;
+  justify-content: space-between;
+}
+
+.right {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.tech {
+  background-repeat: no-repeat;
+  width: 4rem;
+  height: 4rem;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes appearIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

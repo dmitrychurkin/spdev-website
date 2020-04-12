@@ -1,0 +1,16 @@
+.root {
+  color: #fff;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .031rem;
+  width: 80%;
+}
+
+.active {
+  font-size: 4.5rem;
+  line-height: 5.5rem;
+  text-transform: uppercase;
+  letter-spacing: .031rem;
+}

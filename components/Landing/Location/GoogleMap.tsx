@@ -1,6 +1,6 @@
 import React, { memo, useEffect, useRef, FC, useState } from 'react';
-import styles from './Location.module.css';
 import Map from './Map';
+import styles from './Location.module.css';
 
 type Props = {
   readonly activeLocation?: LocationKey;
