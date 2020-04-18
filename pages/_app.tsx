@@ -1,33 +1,32 @@
-import { Store } from 'redux';
-import { NextComponentType, NextPageContext } from 'next';
+import { EnhancedStore } from '@reduxjs/toolkit';
+import { NextComponentType } from 'next';
 import { Provider } from 'react-redux';
 import withRedux from "next-redux-wrapper";
-import App, { AppContext, AppInitialProps } from 'next/app'
-import i18n from '../i18n';
-import configureStore from '../redux-store';
-import { IAppState, IAction } from '../redux-store/interfaces';
-import '../styles.css';
+import App from 'next/app'
+import i18n from 'i18n';
+import makeStore from 'store';
+import Preloader from 'components/Preloader';
+import 'styles.css';
 
 const { appWithTranslation } = i18n;
-const appStore = configureStore();
 
 type Props = {
-  readonly Component: NextComponentType<NextPageContext<IAppState, IAction>, any, {}>;
+  readonly Component: NextComponentType;
   readonly pageProps: any;
-  readonly store: Store<IAppState, IAction>;
+  readonly store: EnhancedStore;
 };
-function CustomizedApp({ Component, pageProps, store }: Props) {
-  return (
-    <Provider store={store}>
-      <Component {...pageProps} />
-    </Provider>
-  );
+
+class CustomizedApp extends App<Props> {
+  render() {
+    const { Component, pageProps, store } = this.props
+    return (
+      <Provider store={store}>
+        <Component {...pageProps} />
+        <Preloader />
+      </Provider>
+    )
+  }
 }
 
-CustomizedApp.getInitialProps = async (appContext: AppContext) => {
-  const initialProps: AppInitialProps = await App.getInitialProps(appContext)
-  return initialProps;
-}
 
-
-export default withRedux(() => appStore)(appWithTranslation(CustomizedApp));
+export default withRedux(makeStore, { debug: process.env.NODE_ENV === 'development' })(appWithTranslation(CustomizedApp));

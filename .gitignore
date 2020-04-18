@@ -29,4 +29,8 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 
+# important !!! please follow this naming conventions
+.env.development
+.env.production
+
 .now

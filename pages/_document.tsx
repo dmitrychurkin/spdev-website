@@ -13,9 +13,8 @@ class CustomizedDocument extends Document {
           <link rel="apple-touch-icon" href="/logo192.png" />
           <link rel="manifest" href="/manifest.json" />
           <link rel="icon" href="/favicon.ico" />
-          {/* TODO: please replace Dmitry's Google Maps API key with real production key */}
           <link href="//fonts.googleapis.com/css?family=Montserrat:400,500,700|Roboto&display=swap" rel="stylesheet" />
-          <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyD-sDS3tDFV1ftKaIM6egPLu3_SHfmL7FI&libraries=places,geometry" />
+          <script src={`//maps.googleapis.com/maps/api/js?key=${process.env.GOOGLE_MAPS_API_KEY}&libraries=places,geometry`} />
         </Head>
         <body>
           <Main />

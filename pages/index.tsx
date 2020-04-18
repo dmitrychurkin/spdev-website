@@ -1,13 +1,11 @@
 import PageLayout from 'components/PageLayout';
-import Preloader from 'components/Preloader';
 import Landing from 'components/Landing';
-import i18n from '../i18n';
+import i18n from 'i18n';
 
 const { withTranslation } = i18n;
 
 const Home = () => (
   <PageLayout title="SPDeveloper">
-    <Preloader />
     <Landing />
   </PageLayout>
 );

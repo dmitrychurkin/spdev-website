@@ -4,6 +4,7 @@
   background: #000;
   transition: opacity .3s ease-in-out;
   position: fixed;
+  top: 0;
   z-index: 100;
   pointer-events: none;
 }
