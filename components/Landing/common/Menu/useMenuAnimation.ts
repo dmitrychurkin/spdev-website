@@ -22,14 +22,23 @@ const menuItemKeyframes = {
   }
 };
 function menuAnimation(navbarEl: HTMLElement, itemElArr: Array<Element>) {
-  return (state: MenuState) => {
+  return (state: MenuState, onAnimationEnd?: (e: AnimationPlaybackEvent) => void) => {
     switch (state) {
       case MenuState.OPEN: {
         navbarEl
           .animate(navbarKeyframes[state], animOptions)
           .onfinish = () => {
+            let itemElAnim;
             for (const item of itemElArr) {
-              item.animate(menuItemKeyframes[state], animOptions)
+              const anim = item.animate(menuItemKeyframes[state], animOptions)
+              if (!itemElAnim) {
+                itemElAnim = anim;
+                itemElAnim.onfinish = e => {
+                  if (typeof onAnimationEnd === 'function') {
+                    onAnimationEnd(e);
+                  }
+                };
+              }
             }
           };
         break;
@@ -41,7 +50,13 @@ function menuAnimation(navbarEl: HTMLElement, itemElArr: Array<Element>) {
           if (!itemElAnim) {
             itemElAnim = anim;
             itemElAnim.onfinish = () => {
-              navbarEl.animate(navbarKeyframes[state], animOptions);
+              navbarEl
+                .animate(navbarKeyframes[state], animOptions)
+                .onfinish = e => {
+                  if (typeof onAnimationEnd === 'function') {
+                    onAnimationEnd(e);
+                  }
+                };
             };
           }
         }
@@ -50,7 +65,7 @@ function menuAnimation(navbarEl: HTMLElement, itemElArr: Array<Element>) {
   };
 }
 export default function useMenuAnimation(navbar = '#navigation', item = '.js-item') {
-  const [fn, setFn] = useState<((state: MenuState) => void) | undefined>();
+  const [fn, setFn] = useState<((state: MenuState, onanimationEnd?: (e: AnimationPlaybackEvent) => void) => void) | undefined>();
   useEffect(() => {
     const nav = document.querySelector(navbar);
     const it = Array.from(document.querySelectorAll(item));

@@ -8,6 +8,7 @@ import useMenuAnimation, { MenuState } from "./useMenuAnimation";
 const Menu: FC = () => {
   const { t } = useTranslation();
   const [open, setOpen] = useState(false);
+  const isAnimating = useRef(false);
   const menuAnimationFn = useMenuAnimation();
   const menuList = useRef([
     { text: t('menu.about_us', 'about us'), label: ScrollLabels.ABOUT_US },
@@ -19,24 +20,26 @@ const Menu: FC = () => {
   ]);
 
   const openMenu = useCallback(() => {
-    if (!open) {
+    if (!open && !isAnimating.current) {
       if (typeof menuAnimationFn === 'function') {
-        menuAnimationFn(MenuState.OPEN);
+        isAnimating.current = true;
+        menuAnimationFn(MenuState.OPEN, () => isAnimating.current = false);
       }
       setOpen(true);
     }
   }, [menuAnimationFn, open]);
 
   const closeMenu = useCallback(() => {
-    if (open) {
+    if (open && !isAnimating.current) {
       if (typeof menuAnimationFn === 'function') {
-        menuAnimationFn(MenuState.CLOSE);
+        isAnimating.current = true;
+        menuAnimationFn(MenuState.CLOSE, () => isAnimating.current = false);
       }
       setOpen(false);
     }
   }, [menuAnimationFn, open]);
 
-  const toggle = useCallback(() => {
+  const toggleMenu = useCallback(() => {
     if (open) {
       closeMenu();
     } else {
@@ -67,7 +70,7 @@ const Menu: FC = () => {
         tabIndex={0}
         aria-label="Menu"
         aria-controls="navigation"
-        onClick={toggle}
+        onClick={toggleMenu}
       >
         <span className={styles.hamburgerBox}>
           <span className={styles.hamburgerInner} />
