@@ -1,22 +1,15 @@
-import { EnhancedStore } from '@reduxjs/toolkit';
-import { NextComponentType } from 'next';
 import { Provider } from 'react-redux';
-import withRedux from "next-redux-wrapper";
+import withRedux, { ReduxWrapperAppProps } from "next-redux-wrapper";
 import App from 'next/app'
 import i18n from 'i18n';
 import makeStore from 'store';
+import { RootState } from 'store/reducer';
 import Preloader from 'components/Preloader';
 import 'styles.css';
 
 const { appWithTranslation } = i18n;
 
-type Props = {
-  readonly Component: NextComponentType;
-  readonly pageProps: any;
-  readonly store: EnhancedStore;
-};
-
-class CustomizedApp extends App<Props> {
+class CustomizedApp extends App<ReduxWrapperAppProps<RootState>> {
   render() {
     const { Component, pageProps, store } = this.props
     return (

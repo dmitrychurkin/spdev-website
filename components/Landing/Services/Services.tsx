@@ -1,7 +1,9 @@
 import React, { memo, FC, useState, useRef } from 'react';
 import { useTranslation, Trans } from 'react-i18next';
+import { Element } from 'react-scroll';
 import SectionLabel from '../common/SectionLabel';
 import SectionTitle from '../common/SectionTitle';
+import { ScrollLabels } from '../common/Menu';
 import Service, { Mode } from './Service';
 import ServiceTitle from './ServiceTitle';
 import styles from './Services.module.css';
@@ -111,23 +113,25 @@ const Services: FC = () => {
   const [mode, setMode] = useState<Mode>(Mode.BRIEF);
 
   return (
-    <section className={styles.root}>
-      <SectionLabel>{t('services.name', 'services')}</SectionLabel>
-      <SectionTitle>
-        <Trans i18nKey="services.title">
-          Quis non do tempor sunt ex enim exercitation commodo commodo sint ea elit non <br /> exercitation. Labore reprehenderit nostrud sunt laborum mollit et ut. Est quis sint esse <br /> deserunt cupidatat culpa consequat fugiat labore velit quis.
-        </Trans>
-      </SectionTitle>
-      <div className={styles.wrap}>
-        {services.current.map(props => (
-          <Service
-            {...props}
-            mode={mode}
-            onChangeMode={setMode}
-          />
-        ))}
-      </div>
-    </section>
+    <Element name={ScrollLabels.SERVICES}>
+      <section className={styles.root}>
+        <SectionLabel>{t('services.name', 'services')}</SectionLabel>
+        <SectionTitle>
+          <Trans i18nKey="services.title">
+            Quis non do tempor sunt ex enim exercitation commodo commodo sint ea elit non <br /> exercitation. Labore reprehenderit nostrud sunt laborum mollit et ut. Est quis sint esse <br /> deserunt cupidatat culpa consequat fugiat labore velit quis.
+          </Trans>
+        </SectionTitle>
+        <div className={styles.wrap}>
+          {services.current.map(props => (
+            <Service
+              {...props}
+              mode={mode}
+              onChangeMode={setMode}
+            />
+          ))}
+        </div>
+      </section>
+    </Element>
   );
 };
 
