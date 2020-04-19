@@ -13,10 +13,6 @@
   opacity: 0;
 }
 
-.end {
-  display: none;
-}
-
 .loader {
   height: 100%;
   display: flex;

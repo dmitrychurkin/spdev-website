@@ -7,14 +7,13 @@ const Preloader: FC = () => {
   const [hide, setHide] = useState(false);
   const onAnimationEnd = useCallback(() => setEnd(true), []);
   const onAnimationIteration = useCallback(() => setHide(true), []);
-  return (
+  return !end ? (
     <div
       onAnimationEnd={onAnimationEnd}
       onAnimationIteration={onAnimationIteration}
       className={clsx(
         styles.root,
-        hide && styles.hide,
-        end && styles.end
+        hide && styles.hide
       )}
       role="alert"
       aria-busy="true"
@@ -27,7 +26,7 @@ const Preloader: FC = () => {
         </div>
       </div>
     </div>
-  );
+  ) : null;
 };
 
 export default memo(Preloader);
