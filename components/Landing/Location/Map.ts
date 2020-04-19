@@ -1,4 +1,5 @@
 export default class Map {
+  private static assetUrl = '//maps.google.com/mapfiles/ms/icons/';
   private static ZOOM = 6; // 11
 
   private static get mapStyles(): Array<{
@@ -408,10 +409,16 @@ export default class Map {
       // Ivano-Frankovsk
       new google.maps.Marker({
         position: new google.maps.LatLng(48.9226, 24.7111),
+        icon: {
+          url: `${new.target.assetUrl}green-dot.png`
+        }
       }),
       // Mariupol
       new google.maps.Marker({
         position: new google.maps.LatLng(47.0971, 37.5434),
+        icon: {
+          url: `${new.target.assetUrl}blue-dot.png`
+        }
       }),
     ],
     options = new.target.defaultOptions,
