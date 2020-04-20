@@ -1,1 +1,1 @@
-export { default } from './SectionLabel';
+export { default } from "./SectionLabel";

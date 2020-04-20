@@ -11,17 +11,17 @@
 
 .activeTitle1 {
   color: var(--green);
-  text-shadow: .2rem .2rem .5rem var(--green);
+  text-shadow: 0.2rem 0.2rem 0.5rem var(--green);
 }
 
 .activeTitle2 {
   color: var(--blue);
-  text-shadow: .2rem .2rem .5rem var(--blue);
+  text-shadow: 0.2rem 0.2rem 0.5rem var(--blue);
 }
 
 .activeTitle3 {
   color: var(--orange);
-  text-shadow: .2rem .2rem .5rem var(--orange);
+  text-shadow: 0.2rem 0.2rem 0.5rem var(--orange);
 }
 
 .cap {
@@ -33,45 +33,45 @@
 }
 
 .s1 {
-  background-image: url('./site_design.jpg');
+  background-image: url("./site_design.jpg");
 }
 
 .a {
-  background-image: url('./99.svg');
+  background-image: url("./99.svg");
 }
 
 .b {
-  background-image: url('./100.svg');
+  background-image: url("./100.svg");
 }
 
 .c {
-  background-image: url('./101.svg');
+  background-image: url("./101.svg");
 }
 
 .d {
-  background-image: url('./102.svg');
+  background-image: url("./102.svg");
 }
 
 .e {
-  background-image: url('./103.svg');
+  background-image: url("./103.svg");
 }
 
 .f {
-  background-image: url('./104.svg');
+  background-image: url("./104.svg");
 }
 
 .g {
-  background-image: url('./105.svg');
+  background-image: url("./105.svg");
 }
 
 .h {
-  background-image: url('./106.svg');
+  background-image: url("./106.svg");
 }
 
 .i {
-  background-image: url('./107.svg');
+  background-image: url("./107.svg");
 }
 
 .j {
-  background-image: url('./108.svg');
+  background-image: url("./108.svg");
 }

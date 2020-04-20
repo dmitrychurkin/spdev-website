@@ -1,6 +1,14 @@
-import React, { FC, memo, DetailedHTMLProps, InputHTMLAttributes, useState, useRef, ChangeEvent } from 'react';
-import clsx from 'clsx';
-import styles from './Input.module.css';
+import React, {
+  FC,
+  memo,
+  DetailedHTMLProps,
+  InputHTMLAttributes,
+  useState,
+  useRef,
+  ChangeEvent,
+} from "react";
+import clsx from "clsx";
+import styles from "./Input.module.css";
 
 type Props = {
   readonly tag: string;
@@ -17,23 +25,23 @@ const Input: FC<Props> = ({
   maxCount = 0,
   ...other
 }) => {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
   const inputAdditionalAttrs = useRef({
     onChange: (e: ChangeEvent<HTMLInputElement>) => {
-      if (typeof onChange === 'function') {
+      if (typeof onChange === "function") {
         onChange(e);
       }
-      if ((typeof maxCount === 'number') || withCounter) {
+      if (typeof maxCount === "number" || withCounter) {
         setCount(e.target.value.length);
       }
-    }
+    },
   });
 
   return (
     <div className={clsx(styles.root, className)}>
       <Element {...inputAdditionalAttrs.current} {...other} />
       <div className={styles.focuser} />
-      {(((typeof maxLength === 'number') && (maxLength > 0)) || (maxCount > 0)) && (
+      {((typeof maxLength === "number" && maxLength > 0) || maxCount > 0) && (
         <div className={styles.counter}>
           <span className={styles.counterCurrent}>{count}</span>
           <span>/{maxLength ?? maxCount}</span>

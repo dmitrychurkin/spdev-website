@@ -1,5 +1,5 @@
-import Head from 'next/head';
-import { FC, memo } from 'react';
+import Head from "next/head";
+import React, { FC, memo } from "react";
 
 type Props = {
   readonly children: JSX.Element | JSX.Element[];

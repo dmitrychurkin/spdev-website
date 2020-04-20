@@ -1,11 +1,11 @@
-const express = require('express');
-const next = require('next');
-const nextI18NextMiddleware = require('next-i18next/middleware').default;
+const express = require("express");
+const next = require("next");
+const nextI18NextMiddleware = require("next-i18next/middleware").default;
 
-const nextI18next = require('./i18n');
+const nextI18next = require("./i18n");
 
 const PORT = parseInt(process.env.PORT, 10) || 3000;
-const app = next({ dev: process.env.NODE_ENV !== 'production' });
+const app = next({ dev: process.env.NODE_ENV !== "production" });
 const handle = app.getRequestHandler();
 
 (async () => {
@@ -16,9 +16,9 @@ const handle = app.getRequestHandler();
 
   server.use(nextI18NextMiddleware(nextI18next));
 
-  server.get('*', (req, res) => handle(req, res));
+  server.get("*", (req, res) => handle(req, res));
 
-  server.listen(PORT, err => {
+  server.listen(PORT, (err) => {
     if (err) {
       throw err;
     }

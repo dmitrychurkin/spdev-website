@@ -1,5 +1,5 @@
 export default class Map {
-  private static assetUrl = '//maps.google.com/mapfiles/ms/icons/';
+  private static assetUrl = "//maps.google.com/mapfiles/ms/icons/";
   private static ZOOM = 6; // 11
 
   private static get mapStyles(): Array<{
@@ -410,19 +410,19 @@ export default class Map {
       new google.maps.Marker({
         position: new google.maps.LatLng(48.9226, 24.7111),
         icon: {
-          url: `${new.target.assetUrl}green-dot.png`
-        }
+          url: `${new.target.assetUrl}green-dot.png`,
+        },
       }),
       // Mariupol
       new google.maps.Marker({
         position: new google.maps.LatLng(47.0971, 37.5434),
         icon: {
-          url: `${new.target.assetUrl}blue-dot.png`
-        }
+          url: `${new.target.assetUrl}blue-dot.png`,
+        },
       }),
     ],
     options = new.target.defaultOptions,
-  }: IMapClassArgs) {
+  }: MapClassArgs) {
     this.map = new google.maps.Map(el, options);
 
     this._markers = markers;
@@ -440,8 +440,9 @@ export default class Map {
   public handleTransition(index: number) {
     const marker = this.markers[index];
     const map = marker.getMap();
-    if (map instanceof google.maps.Map) {
-      map.setCenter(marker.getPosition()!);
+    const markerPosition = marker.getPosition();
+    if (map instanceof google.maps.Map && markerPosition) {
+      map.setCenter(markerPosition);
       this.smoothZoom(map, 12, map.getZoom());
     }
   }
@@ -467,7 +468,7 @@ export default class Map {
   }
 }
 
-interface IMapClassArgs {
+interface MapClassArgs {
   readonly el: Element;
   readonly style?: { name: string; styling: google.maps.MapTypeStyle[] };
   readonly markers?: Array<google.maps.Marker>;

@@ -1,31 +1,33 @@
-.root input, .root textarea {
+.root input,
+.root textarea {
   display: block;
-  padding: 1rem .125rem 1rem 1rem;
+  padding: 1rem 0.125rem 1rem 1rem;
   background-color: #222;
-  border-radius: .25rem .25rem 0 0;
+  border-radius: 0.25rem 0.25rem 0 0;
   border: none;
-  color: rgba(255, 255, 255, .6);
+  color: rgba(255, 255, 255, 0.6);
   width: 100%;
   margin-top: 2rem;
   outline: none;
   font-size: 1rem;
   font-family: inherit;
   line-height: 1.5rem;
-  border-bottom: .06rem solid #fff;
+  border-bottom: 0.06rem solid #fff;
   resize: none;
   box-sizing: border-box;
-  transition: border-width .1s;
+  transition: border-width 0.1s;
 }
 
 .focuser {
   height: 2px;
-  transition: width .5s ease-out;
+  transition: width 0.5s ease-out;
   margin: auto;
   background: #fff;
   width: 0;
 }
 
-.root input:focus + .focuser, .root textarea:focus + .focuser {
+.root input:focus + .focuser,
+.root textarea:focus + .focuser {
   width: 100%;
 }
 
@@ -35,12 +37,12 @@
 
 .counter {
   text-align: right;
-  font-family: 'Roboto', sans-serif;
-  color: rgba(255, 255, 255, .6);
-  letter-spacing: .025rem;
-  font-size: .75rem;
+  font-family: "Roboto", sans-serif;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.025rem;
+  font-size: 0.75rem;
   line-height: 1rem;
-  padding-right: .5rem;
+  padding-right: 0.5rem;
 }
 
 .counterCurrent {

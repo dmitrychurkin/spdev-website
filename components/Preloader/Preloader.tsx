@@ -1,5 +1,5 @@
 import React, { memo, useState, useCallback, FC } from "react";
-import clsx from 'clsx';
+import clsx from "clsx";
 import styles from "./Preloader.module.css";
 
 const Preloader: FC = () => {
@@ -11,10 +11,7 @@ const Preloader: FC = () => {
     <div
       onAnimationEnd={onAnimationEnd}
       onAnimationIteration={onAnimationIteration}
-      className={clsx(
-        styles.root,
-        hide && styles.hide
-      )}
+      className={clsx(styles.root, hide && styles.hide)}
       role="alert"
       aria-busy="true"
     >

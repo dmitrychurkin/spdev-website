@@ -64,14 +64,15 @@
   bottom: 2rem;
   width: 100%;
   text-align: center;
-  font-size: .9rem;
+  font-size: 0.9rem;
   line-height: 1.5rem;
-  letter-spacing: .109rem;
+  letter-spacing: 0.109rem;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, .88);
+  color: rgba(255, 255, 255, 0.88);
 }
 
-.textLabel, .icon {
+.textLabel,
+.icon {
   cursor: pointer;
 }
 
@@ -82,7 +83,7 @@
 }
 
 .icon {
-  width: .8rem;
-  height: .5rem;
+  width: 0.8rem;
+  height: 0.5rem;
   transform: translateY(100%);
 }

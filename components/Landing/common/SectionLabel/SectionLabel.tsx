@@ -1,6 +1,6 @@
-import React, { FC, memo } from 'react';
-import clsx from 'clsx';
-import styles from './SectionLabel.module.css'
+import React, { FC, memo } from "react";
+import clsx from "clsx";
+import styles from "./SectionLabel.module.css";
 
 type Props = {
   readonly children: string;

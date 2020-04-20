@@ -1,12 +1,13 @@
 .root {
   --block-width: 42.5rem;
-  box-shadow: 0 .125rem .3rem rgba(0, 0, 0, .2), 0 .06rem .6rem rgba(0, 0, 0, .12), 0 .3rem .3rem rgba(0, 0, 0, .14);
-  border-radius: .75rem;
+  box-shadow: 0 0.125rem 0.3rem rgba(0, 0, 0, 0.2),
+    0 0.06rem 0.6rem rgba(0, 0, 0, 0.12), 0 0.3rem 0.3rem rgba(0, 0, 0, 0.14);
+  border-radius: 0.75rem;
   width: 26.438rem;
   height: var(--block-width);
   position: relative;
   overflow: hidden;
-  transition: width .5s;
+  transition: width 0.5s;
 }
 
 .large {
@@ -24,7 +25,7 @@
   transform: rotate(-90deg);
   width: var(--block-width);
   opacity: 0;
-  animation: appear .5s .5s forwards;
+  animation: appear 0.5s 0.5s forwards;
 }
 
 .root:not(:last-child) {
@@ -32,15 +33,19 @@
 }
 
 .root::after {
-  content: '';
+  content: "";
   display: block;
   width: inherit;
   height: inherit;
   position: absolute;
   top: 0;
   z-index: 1;
-  background: linear-gradient(180deg, rgba(17, 17, 17, .25) 0%, rgba(17, 17, 17, .75) 100%);
-  transition: opacity .5s;
+  background: linear-gradient(
+    180deg,
+    rgba(17, 17, 17, 0.25) 0%,
+    rgba(17, 17, 17, 0.75) 100%
+  );
+  transition: opacity 0.5s;
   will-change: opacity;
   opacity: 0;
 }
@@ -58,7 +63,7 @@
   position: absolute;
   transform: scale(1.06);
   z-index: 0;
-  transition: transform .5s;
+  transition: transform 0.5s;
   will-change: transform;
   width: 100%;
 }
@@ -77,13 +82,13 @@
   justify-content: center;
   flex-flow: column nowrap;
   transform: translateY(30%);
-  transition: transform .5s;
+  transition: transform 0.5s;
   will-change: transform;
 }
 
 .brief {
   opacity: 0;
-  animation: appearIn .5s .8s forwards;
+  animation: appearIn 0.5s 0.8s forwards;
 }
 
 .root:hover .text {
@@ -92,9 +97,9 @@
 
 .line {
   padding-bottom: 1.5rem;
-  border-bottom: .16rem solid rgba(255, 255, 255, 0.12);
+  border-bottom: 0.16rem solid rgba(255, 255, 255, 0.12);
   width: 0%;
-  transition: width .5s;
+  transition: width 0.5s;
   will-change: contents;
 }
 
@@ -106,16 +111,16 @@
   margin-top: 1rem;
   font-size: 1.125rem;
   line-height: 1.5rem;
-  letter-spacing: .047rem;
+  letter-spacing: 0.047rem;
   width: 80%;
   opacity: 0;
   transform: translateY(10%);
-  transition: transform .5s, opacity .5s;
+  transition: transform 0.5s, opacity 0.5s;
   will-change: transform, opacity;
 }
 
 .large .description {
-  color: rgba(255, 255, 255, .6);
+  color: rgba(255, 255, 255, 0.6);
   opacity: 1;
   margin: 0;
   max-width: 51rem;
@@ -138,7 +143,7 @@
 .btnWrap {
   margin-top: 30%;
   opacity: 0;
-  transition: opacity .5s;
+  transition: opacity 0.5s;
   will-change: opacity;
 }
 
@@ -148,7 +153,7 @@
 
 .detail {
   opacity: 0;
-  animation: appear .5s .5s forwards;
+  animation: appear 0.5s 0.5s forwards;
   position: relative;
   height: 100%;
   z-index: 2;
@@ -160,8 +165,8 @@
 }
 
 .icon {
-  width: .8rem;
-  height: .5rem;
+  width: 0.8rem;
+  height: 0.5rem;
   transform: rotate(90deg);
 }
 

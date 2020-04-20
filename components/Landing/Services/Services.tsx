@@ -1,19 +1,19 @@
-import React, { memo, FC, useState, useRef } from 'react';
-import { useTranslation, Trans } from 'react-i18next';
-import { Element } from 'react-scroll';
-import SectionLabel from '../common/SectionLabel';
-import SectionTitle from '../common/SectionTitle';
-import { ScrollLabels } from '../common/Menu';
-import Service, { Mode } from './Service';
-import ServiceTitle from './ServiceTitle';
-import styles from './Services.module.css';
+import React, { memo, FC, useState, useRef } from "react";
+import { useTranslation, Trans } from "react-i18next";
+import { Element } from "react-scroll";
+import SectionLabel from "../common/SectionLabel";
+import SectionTitle from "../common/SectionTitle";
+import { ScrollLabels } from "../common/Menu";
+import Service, { Mode } from "./Service";
+import ServiceTitle from "./ServiceTitle";
+import styles from "./Services.module.css";
 
 const Services: FC = () => {
   const { t } = useTranslation();
 
   const services = useRef([
     {
-      key: 'site_design',
+      key: "site_design",
       bg: styles.s1,
       title: withTitle(styles.activeTitle1)(
         <Trans i18nKey="services.site_design.title">
@@ -23,13 +23,20 @@ const Services: FC = () => {
       subtitle: (
         <span className={styles.cap}>
           <Trans i18nKey="services.site_design.subtitle">
-            <strong className={styles.up}>logic</strong> calculations &<br /> inspiration
+            <strong className={styles.up}>logic</strong> calculations &<br />{" "}
+            inspiration
           </Trans>
         </span>
       ),
       description: [
-        t('services.site_design.p1', 'Tempor deserunt sunt qui occaecat deserunt nulla duis ullamco dolor occaecat exercitation.'),
-        t('services.site_design.p2', 'Sint pariatur duis Lorem in veniam mollit pariatur do dolore laboris sit aliquip.')
+        t(
+          "services.site_design.p1",
+          "Tempor deserunt sunt qui occaecat deserunt nulla duis ullamco dolor occaecat exercitation."
+        ),
+        t(
+          "services.site_design.p2",
+          "Sint pariatur duis Lorem in veniam mollit pariatur do dolore laboris sit aliquip."
+        ),
       ],
       tech: [
         styles.a,
@@ -41,11 +48,11 @@ const Services: FC = () => {
         styles.g,
         styles.h,
         styles.i,
-        styles.j
-      ]
+        styles.j,
+      ],
     },
     {
-      key: 'site_development',
+      key: "site_development",
       bg: styles.s1,
       title: withTitle(styles.activeTitle2)(
         <Trans i18nKey="services.site_development.title">
@@ -55,13 +62,20 @@ const Services: FC = () => {
       subtitle: (
         <span className={styles.cap}>
           <Trans i18nKey="services.site_development.subtitle">
-            <strong className={styles.up}>innovations</strong> knowledge &<br /> experience
+            <strong className={styles.up}>innovations</strong> knowledge &<br />{" "}
+            experience
           </Trans>
         </span>
       ),
       description: [
-        t('services.site_design.p1', 'Tempor deserunt sunt qui occaecat deserunt nulla duis ullamco dolor occaecat exercitation.'),
-        t('services.site_design.p2', 'Sint pariatur duis Lorem in veniam mollit pariatur do dolore laboris sit aliquip.')
+        t(
+          "services.site_design.p1",
+          "Tempor deserunt sunt qui occaecat deserunt nulla duis ullamco dolor occaecat exercitation."
+        ),
+        t(
+          "services.site_design.p2",
+          "Sint pariatur duis Lorem in veniam mollit pariatur do dolore laboris sit aliquip."
+        ),
       ],
       tech: [
         styles.a,
@@ -73,11 +87,11 @@ const Services: FC = () => {
         styles.g,
         styles.h,
         styles.i,
-        styles.j
-      ]
+        styles.j,
+      ],
     },
     {
-      key: 'app_development',
+      key: "app_development",
       bg: styles.s1,
       title: withTitle(styles.activeTitle3)(
         <Trans i18nKey="services.app_development.title">
@@ -87,13 +101,20 @@ const Services: FC = () => {
       subtitle: (
         <span className={styles.cap}>
           <Trans i18nKey="services.app_development.subtitle">
-            <strong className={styles.up}>user</strong> experience &<br /> trends
+            <strong className={styles.up}>user</strong> experience &
+            <br /> trends
           </Trans>
         </span>
       ),
       description: [
-        t('services.site_design.p1', 'Tempor deserunt sunt qui occaecat deserunt nulla duis ullamco dolor occaecat exercitation.'),
-        t('services.site_design.p2', 'Sint pariatur duis Lorem in veniam mollit pariatur do dolore laboris sit aliquip.')
+        t(
+          "services.site_design.p1",
+          "Tempor deserunt sunt qui occaecat deserunt nulla duis ullamco dolor occaecat exercitation."
+        ),
+        t(
+          "services.site_design.p2",
+          "Sint pariatur duis Lorem in veniam mollit pariatur do dolore laboris sit aliquip."
+        ),
       ],
       tech: [
         styles.a,
@@ -105,9 +126,9 @@ const Services: FC = () => {
         styles.g,
         styles.h,
         styles.i,
-        styles.j
-      ]
-    }
+        styles.j,
+      ],
+    },
   ]);
 
   const [mode, setMode] = useState<Mode>(Mode.BRIEF);
@@ -115,19 +136,18 @@ const Services: FC = () => {
   return (
     <Element name={ScrollLabels.SERVICES}>
       <section className={styles.root}>
-        <SectionLabel>{t('services.name', 'services')}</SectionLabel>
+        <SectionLabel>{t("services.name", "services")}</SectionLabel>
         <SectionTitle>
           <Trans i18nKey="services.title">
-            Quis non do tempor sunt ex enim exercitation commodo commodo sint ea elit non <br /> exercitation. Labore reprehenderit nostrud sunt laborum mollit et ut. Est quis sint esse <br /> deserunt cupidatat culpa consequat fugiat labore velit quis.
+            Quis non do tempor sunt ex enim exercitation commodo commodo sint ea
+            elit non <br /> exercitation. Labore reprehenderit nostrud sunt
+            laborum mollit et ut. Est quis sint esse <br /> deserunt cupidatat
+            culpa consequat fugiat labore velit quis.
           </Trans>
         </SectionTitle>
         <div className={styles.wrap}>
-          {services.current.map(props => (
-            <Service
-              {...props}
-              mode={mode}
-              onChangeMode={setMode}
-            />
+          {services.current.map((props) => (
+            <Service {...props} mode={mode} onChangeMode={setMode} />
           ))}
         </div>
       </section>

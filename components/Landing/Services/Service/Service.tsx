@@ -1,9 +1,14 @@
-import React, { memo, FC, useState, useCallback, useMemo } from 'react';
-import clsx from 'clsx';
-import Button from 'components/Landing/common/Button';
-import Stripe from 'components/Landing/common/Stripe';
-import { useTranslation } from 'react-i18next';
-import styles from './Service.module.css'
+import React, { memo, FC, useState, useCallback, useMemo } from "react";
+import clsx from "clsx";
+import Button from "components/Landing/common/Button";
+import Stripe from "components/Landing/common/Stripe";
+import { useTranslation } from "react-i18next";
+import styles from "./Service.module.css";
+
+export enum Mode {
+  BRIEF,
+  DETAIL,
+}
 
 type Props = {
   readonly bg: string;
@@ -14,7 +19,15 @@ type Props = {
   readonly mode: Mode;
   readonly onChangeMode: (mode: Mode) => void;
 };
-const Service: FC<Props> = ({ bg, title: Title, subtitle, description, tech, mode, onChangeMode }) => {
+const Service: FC<Props> = ({
+  bg,
+  title: Title,
+  subtitle,
+  description,
+  tech,
+  mode,
+  onChangeMode,
+}) => {
   const { t } = useTranslation();
 
   const [isActive, setActive] = useState(false);
@@ -23,32 +36,51 @@ const Service: FC<Props> = ({ bg, title: Title, subtitle, description, tech, mod
     const newState = !isActive;
     setActive(newState);
     onChangeMode(Number(newState));
-  }, [isActive]);
+  }, [isActive, onChangeMode]);
 
-  const serviceDescription = useMemo(() => (
-    <div className={styles.description}>
-      {description.map(d => <p key={d} className={styles.dp}>{d}</p>)}
-    </div>
-  ), []);
+  const serviceDescription = useMemo(
+    () => (
+      <div className={styles.description}>
+        {description.map((d) => (
+          <p key={d} className={styles.dp}>
+            {d}
+          </p>
+        ))}
+      </div>
+    ),
+    [description]
+  );
 
   return (
-    <div className={clsx(styles.root, isActive && styles.active, getClass(isActive, mode))}>
+    <div
+      className={clsx(
+        styles.root,
+        isActive && styles.active,
+        getClass(isActive, mode)
+      )}
+    >
       <div className={clsx(styles.img, bg)} />
-      {{
-        [Mode.BRIEF]: (
-          <div className={clsx(styles.text, styles.brief)}>
-            <Title isActive={isActive} />
-            <div className={styles.line} />
-            {serviceDescription}
-            <div className={styles.btnWrap}>
-              <Button onClick={onClick}>{t('services.read_more', 'read more')}</Button>
+      {
+        {
+          [Mode.BRIEF]: (
+            <div className={clsx(styles.text, styles.brief)}>
+              <Title isActive={isActive} />
+              <div className={styles.line} />
+              {serviceDescription}
+              <div className={styles.btnWrap}>
+                <Button onClick={onClick}>
+                  {t("services.read_more", "read more")}
+                </Button>
+              </div>
             </div>
-          </div>
-        ),
-        [Mode.DETAIL]: (
-          isActive ? (
+          ),
+          [Mode.DETAIL]: isActive ? (
             <div className={styles.detail}>
-              <Button className={styles.btn} formFactor='round' onClick={onClick}>
+              <Button
+                className={styles.btn}
+                formFactor="round"
+                onClick={onClick}
+              >
                 <svg className={styles.icon}>
                   <use xlinkHref="#arrow_down" />
                 </svg>
@@ -59,23 +91,22 @@ const Service: FC<Props> = ({ bg, title: Title, subtitle, description, tech, mod
               </div>
               <Stripe className={styles.stripe}>
                 <div>{serviceDescription}</div>
-                <div className={styles.right}>{tech.map(icon => <div key={icon} className={clsx(icon, styles.tech)} />)}</div>
+                <div className={styles.right}>
+                  {tech.map((icon) => (
+                    <div key={icon} className={clsx(icon, styles.tech)} />
+                  ))}
+                </div>
               </Stripe>
             </div>
           ) : (
             <div className={styles.title}>
               <Title isActive={false} />
             </div>
-          )
-        )
-      }[mode]}
+          ),
+        }[mode]
+      }
     </div>
-  )
-};
-
-export enum Mode {
-  BRIEF,
-  DETAIL
+  );
 };
 
 function getClass(isActive: boolean, mode: Mode) {
@@ -85,7 +116,7 @@ function getClass(isActive: boolean, mode: Mode) {
   if (mode === Mode.DETAIL) {
     return styles.small;
   }
-  return '';
+  return "";
 }
 
-export default memo(Service)
+export default memo(Service);

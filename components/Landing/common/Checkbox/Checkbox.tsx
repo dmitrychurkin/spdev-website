@@ -1,6 +1,6 @@
-import React, { memo, FC } from 'react';
-import clsx from 'clsx';
-import styles from './Checkbox.module.css';
+import React, { memo, FC } from "react";
+import clsx from "clsx";
+import styles from "./Checkbox.module.css";
 
 type Props = {
   readonly label?: string | JSX.Element;

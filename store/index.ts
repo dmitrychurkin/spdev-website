@@ -6,13 +6,13 @@ const makeStore: MakeStore = (preloadedState: RootState) => {
   const store = configureStore({
     reducer,
     preloadedState,
-    devTools: process.env.NODE_ENV === 'development'
+    devTools: process.env.NODE_ENV === "development",
   });
 
-  if (process.env.NODE_ENV === 'development' && module.hot) {
-    module.hot.accept('./reducer', () => {
-      store.replaceReducer(require('./reducer').default)
-    })
+  if (process.env.NODE_ENV === "development" && module.hot) {
+    module.hot.accept("./reducer", () => {
+      store.replaceReducer(require("./reducer").default);
+    });
   }
 
   return store;

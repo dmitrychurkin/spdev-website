@@ -1,23 +1,34 @@
-import React, { memo, useRef, FC } from 'react';
-import { useTranslation, Trans } from 'react-i18next';
-import { Element } from 'react-scroll';
-import { ScrollLabels } from '../common/Menu';
-import SectionLabel from '../common/SectionLabel';
-import Input from '../common/Input';
-import styles from './ContactUs.module.css';
-import Checkbox from '../common/Checkbox';
+import React, { memo, useRef, FC } from "react";
+import { useTranslation, Trans } from "react-i18next";
+import { Element } from "react-scroll";
+import { ScrollLabels } from "../common/Menu";
+import SectionLabel from "../common/SectionLabel";
+import Input from "../common/Input";
+import styles from "./ContactUs.module.css";
+import Checkbox from "../common/Checkbox";
 
 const ContactUs: FC = () => {
-  const { t } = useTranslation()
-  const ukraine = t('contact_us.contacts.ukraine', 'ukraine');
+  const { t } = useTranslation();
+  const ukraine = t("contact_us.contacts.ukraine", "ukraine");
   const address = useRef([
-    { country: `${ukraine}, ${t('contact_us.contacts.mariupol', 'mariupol')}`, email: 'cooperation@spdev.com.ua', phone: '+38067156550' },
-    { country: `${ukraine}, ${t('contact_us.contacts.ivano-frankivsk', 'ivano-frankivsk')}`, email: 'contact@spdev.com.ua', phone: '+380951086488' },
-  ])
+    {
+      country: `${ukraine}, ${t("contact_us.contacts.mariupol", "mariupol")}`,
+      email: "cooperation@spdev.com.ua",
+      phone: "+38067156550",
+    },
+    {
+      country: `${ukraine}, ${t(
+        "contact_us.contacts.ivano-frankivsk",
+        "ivano-frankivsk"
+      )}`,
+      email: "contact@spdev.com.ua",
+      phone: "+380951086488",
+    },
+  ]);
   return (
     <Element name={ScrollLabels.CONTACT_US}>
       <section className={styles.root}>
-        <SectionLabel>{t('contact_us.name', 'contact us')}</SectionLabel>
+        <SectionLabel>{t("contact_us.name", "contact us")}</SectionLabel>
         <div className={styles.wrapper}>
           <div className={styles.form}>
             <div className={styles.title}>
@@ -27,38 +38,49 @@ const ContactUs: FC = () => {
             </div>
             <div className={styles.subtitle}>
               <Trans i18nKey="contact_us.contact_form.subtitle">
-                You have an idea, or want to know the approximate cost <br /> of your project?
+                You have an idea, or want to know the approximate cost <br /> of
+                your project?
               </Trans>
             </div>
             <form>
               <Input
                 className={styles.firstInput}
                 tag="input"
-                placeholder={t('contact_us.contact_form.name', 'Name')}
+                placeholder={t("contact_us.contact_form.name", "Name")}
                 required
               />
               <Input
                 tag="input"
                 type="tel"
-                placeholder={t('contact_us.contact_form.number', 'Phone number')}
+                placeholder={t(
+                  "contact_us.contact_form.number",
+                  "Phone number"
+                )}
                 required
               />
               <Input
                 tag="input"
                 type="email"
-                placeholder={t('contact_us.contact_form.email', 'E-mail')}
+                placeholder={t("contact_us.contact_form.email", "E-mail")}
                 required
               />
               <Input
                 tag="textarea"
-                placeholder={t('contact_us.contact_form.description', 'Description')}
+                placeholder={t(
+                  "contact_us.contact_form.description",
+                  "Description"
+                )}
                 maxLength={460}
               />
               <Checkbox
                 className={styles.checkbox}
                 label={
                   <Trans i18nKey="contact_us.contact_form.checkbox">
-                    I accept <span className={styles.checkboxLabel}>Term of service</span> etc.
+                    I accept{" "}
+                    <span className={styles.checkboxLabel}>
+                      Term of service
+                    </span>{" "}
+                    etc.
                   </Trans>
                 }
               />
@@ -82,9 +104,11 @@ const ContactUs: FC = () => {
                 <div>{phone}</div>
               </div>
             ))}
-            <div className={styles.join}>{t('contact_us.contacts.join', 'want to join our team?')}</div>
+            <div className={styles.join}>
+              {t("contact_us.contacts.join", "want to join our team?")}
+            </div>
             <div className={styles.comeHere}>
-              {t('contact_us.contacts.come_here', 'Come here')}
+              {t("contact_us.contacts.come_here", "Come here")}
               <svg className={styles.comeHereIcon}>
                 <use xlinkHref="#link_ref" />
               </svg>

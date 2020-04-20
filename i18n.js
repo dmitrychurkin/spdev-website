@@ -1,10 +1,10 @@
-const NextI18Next = require('next-i18next').default;
+const NextI18Next = require("next-i18next").default;
 
 module.exports = new NextI18Next({
-  otherLanguages: ['ru'],
+  otherLanguages: ["ru"],
   localeSubpaths: {
-    en: 'en',
-    ru: 'ru'
+    en: "en",
+    ru: "ru",
   },
-  shallowRender: true
+  shallowRender: true,
 });

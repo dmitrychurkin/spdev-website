@@ -1,19 +1,19 @@
-import React, { FC, memo, useState } from 'react';
-import { useTranslation, Trans } from 'react-i18next';
-import { Element } from 'react-scroll';
-import { ScrollLabels } from '../common/Menu';
-import SectionLabel from '../common/SectionLabel';
-import Stripe from '../common/Stripe';
-import Button from '../common/Button';
-import GoogleMap, { LocationKey } from './GoogleMap';
-import styles from './Location.module.css';
+import React, { FC, memo, useState } from "react";
+import { useTranslation, Trans } from "react-i18next";
+import { Element } from "react-scroll";
+import { ScrollLabels } from "../common/Menu";
+import SectionLabel from "../common/SectionLabel";
+import Stripe from "../common/Stripe";
+import Button from "../common/Button";
+import GoogleMap, { LocationKey } from "./GoogleMap";
+import styles from "./Location.module.css";
 
 const socialLinks = [
-  { name: 'linkedin', link: '//google.com' },
-  { name: 'fb', link: '//google.com' },
-  { name: 'twitter', link: '//google.com' },
-  { name: 'google', link: '//google.com' },
-  { name: 'instagram', link: '//google.com' }
+  { name: "linkedin", link: "//google.com" },
+  { name: "fb", link: "//google.com" },
+  { name: "twitter", link: "//google.com" },
+  { name: "google", link: "//google.com" },
+  { name: "instagram", link: "//google.com" },
 ];
 const Location: FC = () => {
   const { t } = useTranslation();
@@ -24,17 +24,22 @@ const Location: FC = () => {
   return (
     <Element name={ScrollLabels.LOCATION}>
       <section>
-        <SectionLabel className={styles.gap}>{t('location.name', 'location')}</SectionLabel>
+        <SectionLabel className={styles.gap}>
+          {t("location.name", "location")}
+        </SectionLabel>
         <div className={styles.mapWrap}>
           <div className={styles.text}>
             <div className={styles.title}>
               <Trans i18nKey="location.text.title">
-                <strong>Exercitation veniam</strong> et sit dolore aute adipisicing <br/> eiusmod adipisicing.
+                <strong>Exercitation veniam</strong> et sit dolore aute
+                adipisicing <br /> eiusmod adipisicing.
               </Trans>
             </div>
             <div className={styles.subtitle}>
               <Trans i18nKey="location.text.subtitle">
-                Quis non do tempor sunt ex enim exercitation commodo <br /> commodo sint ea 2020 non exercitation. Labore reprehenderit <br /> nostrud sunt laborum mollit et ut.
+                Quis non do tempor sunt ex enim exercitation commodo <br />{" "}
+                commodo sint ea 2020 non exercitation. Labore reprehenderit{" "}
+                <br /> nostrud sunt laborum mollit et ut.
               </Trans>
             </div>
           </div>
@@ -50,8 +55,20 @@ const Location: FC = () => {
               ))}
             </div>
             <div className={styles.actions}>
-              <Button onClick={onClickHandler(LocationKey.IVANO_FRANKOVSK)} type="button" className={styles.btn}>{t('contact_us.contacts.ivano-frankivsk', 'ivano-frankivsk')}</Button>
-              <Button onClick={onClickHandler(LocationKey.MARIUPOL)} type="button" className={styles.btn}>{t('contact_us.contacts.mariupol', 'mariupol')}</Button>
+              <Button
+                onClick={onClickHandler(LocationKey.IVANO_FRANKOVSK)}
+                type="button"
+                className={styles.btn}
+              >
+                {t("contact_us.contacts.ivano-frankivsk", "ivano-frankivsk")}
+              </Button>
+              <Button
+                onClick={onClickHandler(LocationKey.MARIUPOL)}
+                type="button"
+                className={styles.btn}
+              >
+                {t("contact_us.contacts.mariupol", "mariupol")}
+              </Button>
             </div>
           </Stripe>
         </div>
@@ -60,7 +77,9 @@ const Location: FC = () => {
   );
 };
 
-function setActiveLocation(setState: React.Dispatch<React.SetStateAction<LocationKey | undefined>>) {
+function setActiveLocation(
+  setState: React.Dispatch<React.SetStateAction<LocationKey | undefined>>
+) {
   return (key: LocationKey) => () => setState(key);
 }
 

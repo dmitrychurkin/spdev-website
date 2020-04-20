@@ -1,6 +1,6 @@
-import React, { FC, memo } from 'react';
-import clsx from 'clsx';
-import styles from './ServiceTitle.module.css';
+import React, { FC, memo } from "react";
+import clsx from "clsx";
+import styles from "./ServiceTitle.module.css";
 
 type Props = {
   readonly isActive: boolean;
