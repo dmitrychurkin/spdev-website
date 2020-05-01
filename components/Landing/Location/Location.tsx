@@ -1,11 +1,12 @@
-import React, { FC, memo, useState } from "react";
+import React, { FC, memo, useState, useCallback } from "react";
 import { useTranslation, Trans } from "react-i18next";
 import { Element } from "react-scroll";
 import { ScrollLabels } from "../common/Menu";
 import SectionLabel from "../common/SectionLabel";
 import Stripe from "../common/Stripe";
 import Button from "../common/Button";
-import GoogleMap, { LocationKey } from "./GoogleMap";
+import GoogleMap from "./GoogleMap";
+import Map, { MapRegions } from "./Map";
 import styles from "./Location.module.css";
 
 const socialLinks = [
@@ -17,9 +18,12 @@ const socialLinks = [
 ];
 const Location: FC = () => {
   const { t } = useTranslation();
+  const [activeLocation, setLocation] = useState<MapRegions>();
 
-  const [activeLocation, setLocation] = useState<LocationKey>();
-  const onClickHandler = setActiveLocation(setLocation);
+  const createOnClickHandler = useCallback(
+    (location: MapRegions) => () => setLocation(location),
+    [setLocation]
+  );
 
   return (
     <Element name={ScrollLabels.LOCATION}>
@@ -56,14 +60,14 @@ const Location: FC = () => {
             </div>
             <div className={styles.actions}>
               <Button
-                onClick={onClickHandler(LocationKey.IVANO_FRANKOVSK)}
+                onClick={createOnClickHandler(Map.IVANO_FRANKIVSK)}
                 type="button"
                 className={styles.btn}
               >
                 {t("contact_us.contacts.ivano-frankivsk", "ivano-frankivsk")}
               </Button>
               <Button
-                onClick={onClickHandler(LocationKey.MARIUPOL)}
+                onClick={createOnClickHandler(Map.MARIUPOL)}
                 type="button"
                 className={styles.btn}
               >
@@ -76,11 +80,5 @@ const Location: FC = () => {
     </Element>
   );
 };
-
-function setActiveLocation(
-  setState: React.Dispatch<React.SetStateAction<LocationKey | undefined>>
-) {
-  return (key: LocationKey) => () => setState(key);
-}
 
 export default memo(Location);

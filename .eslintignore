@@ -1,3 +1,8 @@
 node_modules
 .next
 .now
+components/Landing/Location/Map/donetskRegion.json
+components/Landing/Location/Map/ivanoFrankivskRegion.json
+components/Landing/Location/Map/mapStyle.json
+components/Landing/Location/Map/ukraine.json
+components/Landing/Location/Location.module.css

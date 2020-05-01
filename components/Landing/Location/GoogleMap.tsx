@@ -1,10 +1,11 @@
 import React, { memo, useEffect, useRef, FC, useState } from "react";
-import Map from "./Map";
+import Map, { MapRegions } from "./Map";
 import styles from "./Location.module.css";
 
 type Props = {
-  readonly activeLocation?: LocationKey;
+  readonly activeLocation?: MapRegions;
 };
+
 const GoogleMap: FC<Props> = ({ activeLocation }) => {
   const refMap = useRef<HTMLDivElement>(null);
   const [googleMap, setGoogleMap] = useState<Map>();
@@ -17,17 +18,12 @@ const GoogleMap: FC<Props> = ({ activeLocation }) => {
   }, []);
 
   useEffect(() => {
-    if (googleMap instanceof Map && typeof activeLocation === "number") {
+    if (googleMap instanceof Map && activeLocation) {
       googleMap.handleTransition(activeLocation);
     }
   }, [activeLocation, googleMap]);
 
   return <div className={styles.map} ref={refMap} />;
 };
-
-export enum LocationKey {
-  IVANO_FRANKOVSK,
-  MARIUPOL,
-}
 
 export default memo(GoogleMap);
