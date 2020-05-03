@@ -14,12 +14,12 @@ const animOptions: KeyframeAnimationOptions = {
 const navbarKeyframes = {
   [MenuState.OPEN]: {
     width: ["0", "7.6rem"],
-    height: ["0", "17.5rem"],
+    height: ["0", "21rem"],
     padding: ["0", "1rem 4rem 3rem 4rem"],
   },
   [MenuState.CLOSE]: {
     width: ["7.6rem", "0"],
-    height: ["17.5rem", "0"],
+    height: ["21rem", "0"],
     padding: ["1rem 4rem 3rem 4rem", "0"],
   },
 };

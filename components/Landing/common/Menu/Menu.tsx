@@ -108,13 +108,7 @@ const Menu: FC = () => {
       </button>
       <nav id="navigation" className={styles.nav}>
         {menuList.current.map(({ text, label }) => (
-          <Link
-            key={label}
-            to={label}
-            offset={-55}
-            smooth={true}
-            duration={500}
-          >
+          <Link key={label} to={label} smooth={true} duration={500}>
             <div className={clsx("js-item", styles.item)}>{text}</div>
           </Link>
         ))}

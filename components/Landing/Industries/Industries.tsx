@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { memo, FC, useEffect, useMemo } from "react";
 import { useTranslation, Trans } from "react-i18next";
 import Swiper from "swiper";
@@ -10,32 +11,32 @@ import styles from "./Industries.module.css";
 
 type Props = {
   readonly bgUrl?: string;
+  readonly delay?: number;
 };
-const Industries: FC<Props> = ({ bgUrl = "/industries.webp" }) => {
+const Industries: FC<Props> = ({
+  bgUrl = "/industries.webp",
+  delay = 10000,
+}) => {
   const { t } = useTranslation("landing");
 
   useEffect(() => {
     new Swiper(".swiper-container", {
       parallax: true,
       speed: 600,
+      autoplay: { delay },
+      keyboard: true,
+      a11y: true,
       pagination: {
         el: ".swiper-pagination",
         clickable: true,
       },
-      keyboard: true,
-      a11y: true,
     });
   }, []);
 
   const Btn = useMemo(
     () => (
       <div className={styles.slCa}>
-        <Link
-          to={ScrollLabels.CONTACT_US}
-          offset={-55}
-          smooth={true}
-          duration={500}
-        >
+        <Link to={ScrollLabels.CONTACT_US} smooth={true} duration={500}>
           <Button type="button">{t("contact_us.name", "contact us")}</Button>
         </Link>
       </div>

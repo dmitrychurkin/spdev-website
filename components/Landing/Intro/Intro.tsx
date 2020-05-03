@@ -29,12 +29,7 @@ const Intro: FC = () => {
               </Trans>
             </div>
           </div>
-          <Link
-            to={ScrollLabels.CONTACT_US}
-            offset={-55}
-            smooth={true}
-            duration={500}
-          >
+          <Link to={ScrollLabels.CONTACT_US} smooth={true} duration={500}>
             <Button type="button" className={styles.btn}>
               {t("contact_us.name", "contact us")}
             </Button>
@@ -42,9 +37,8 @@ const Intro: FC = () => {
         </Stripe>
         <div className={styles.bottomText}>
           <Link
-            to={ScrollLabels.SERVICES}
+            to={ScrollLabels.INDUSTRIES}
             className={styles.textLabel}
-            offset={-55}
             smooth={true}
             duration={500}
           >
