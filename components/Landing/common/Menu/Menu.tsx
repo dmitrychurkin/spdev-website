@@ -14,6 +14,7 @@ import useMenuAnimation, { MenuState } from "./useMenuAnimation";
 
 export enum ScrollLabels {
   INTRO = "intro",
+  INDUSTRIES = "industries",
   SERVICES = "services",
   ABOUT_US = "about_us",
   PARTNERS = "partners",
@@ -22,7 +23,7 @@ export enum ScrollLabels {
 }
 
 const Menu: FC = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("landing");
 
   const [open, setOpen] = useState(false);
 
@@ -32,6 +33,10 @@ const Menu: FC = () => {
 
   const menuList = useRef([
     { text: t("menu.about_us", "about us"), label: ScrollLabels.ABOUT_US },
+    {
+      text: t("menu.industries", "industries"),
+      label: ScrollLabels.INDUSTRIES,
+    },
     { text: t("menu.services", "services"), label: ScrollLabels.SERVICES },
     // t('menu.portfolio', 'portfolio'),
     { text: t("menu.partners", "partners"), label: ScrollLabels.PARTNERS },

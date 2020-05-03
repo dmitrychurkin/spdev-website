@@ -16,7 +16,7 @@ const socialLinks = [
   { name: "instagram", link: "//google.com" },
 ];
 const Location: FC = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("landing");
 
   const [activeLocation, setLocation] = useState<LocationKey>();
   const onClickHandler = setActiveLocation(setLocation);

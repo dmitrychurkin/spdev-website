@@ -28,7 +28,7 @@ const Service: FC<Props> = ({
   mode,
   onChangeMode,
 }) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("landing");
 
   const [isActive, setActive] = useState(false);
 

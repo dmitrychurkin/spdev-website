@@ -7,7 +7,7 @@ import SectionTitle from "../common/SectionTitle";
 import styles from "./Partners.module.css";
 
 const Partners: FC = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("landing");
   return (
     <Element name={ScrollLabels.PARTNERS}>
       <section>

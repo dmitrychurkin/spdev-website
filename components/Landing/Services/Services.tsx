@@ -9,7 +9,7 @@ import ServiceTitle from "./ServiceTitle";
 import styles from "./Services.module.css";
 
 const Services: FC = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("landing");
 
   const services = useRef([
     {

@@ -6,6 +6,7 @@ import i18n from "i18n";
 import makeStore from "store";
 import { RootState } from "store/reducer";
 import Preloader from "components/Preloader";
+import "swiper/css/swiper.min.css";
 import "styles.css";
 
 const { appWithTranslation } = i18n;

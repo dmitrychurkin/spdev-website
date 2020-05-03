@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import styles from "./Footer.module.css";
 
 const Footer: FC = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("landing");
   const nav = useRef([
     { text: t("footer.procurement", "Procurement") },
     { text: t("footer.accessibility", "Accessibility") },

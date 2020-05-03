@@ -7,7 +7,7 @@ import Button from "../common/Button";
 import styles from "./Intro.module.css";
 
 const Intro: FC = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("landing");
   return (
     <Element name={ScrollLabels.ABOUT_US}>
       <section className={styles.root}>

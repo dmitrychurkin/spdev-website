@@ -2,6 +2,7 @@
   "menu": {
     "id": "menu",
     "about_us": "about us",
+    "industries": "industries",
     "services": "services",
     "portfolio": "portfolio",
     "partners": "partners",
@@ -12,6 +13,46 @@
     "title": "<0>Highly efficient</0> innovative driven software development company.",
     "sub": "We deliver business and technology innovations from scratch <1/> by using value-added solutions.",
     "bottom": "software of your success"
+  },
+  "industries": {
+    "name": "industries",
+    "slider": {
+      "travel": {
+        "header": "travel",
+        "p1": "<0>The travel industry is very dynamiс</0>, so this factor should always be taken into account during development for this industry. A lot of daily challenges related to speed-related processes, customer loyalty, extremely high competition, operational excellence, the ongoing rise of social media, branding, etc are waiting for travel managers.",
+        "p2": "<0>SPDev team helps your business</0> achieve the right balance and automate many daily tasks.<2/> Our tourism industry-specific tech solutions, as well as consulting services, are based on the broad-spectrum of successfully completed projects. High-quality app and web development, CRM system, any kinds of chatbots and messengers, helping to automate your daily workflow and implement the bravest ideas to life.",
+        "p3": "<0>Take advantage of our web-based software</0> solutions that can completely enlarge your efficiency, improve customer experience and generate higher profits."
+      },
+      "logistic": {
+        "header": "transportation & logistic",
+        "p1": "<0>Many years of work</0> with the logistics and transportation industries, gave us knowledge that any mistake can result in time and money expenditures. Therefore during the project development, we use our time-proven development process and pay specific attention to testing our products.",
+        "p2": "<0>Our specialists</0> provide complete solutions that cover everything from traffic monitoring to booking and accounting and implement projects of all levels of complexity taking into account high clients’ business value.",
+        "p3": "<0>We offer:</0><1/>• Smart supply chain solutions<3/>• Web and app development<5/>• Automated warehouses<7/>• Transportation management software<9/>• Customer Relationship Management (CRM) Systems<11/>• Business consulting<13/>• Partnership",
+        "note": "Rest assured, that our skilled remote team will make every effort to implement your ideas in life and ready to go miles beyond the extra mile."
+      },
+      "retail": {
+        "header": "retail",
+        "p1": "<0>Innovative IT solutions and customer-focus</0>  are some of the important keys to success in the retail marketplace. SPDev team will help you find your own successful key that is best reap your benefits in the market with technology.",
+        "p2": "<0>We provide solutions</0> for the retail industry that improve the purchasing process, ideally respond to your customers’ demands and sustain the cost-effectiveness of your business.",
+        "p3": "<0>SPDev offers quality tech services</0> based on long-year experience and industry- innovation:<2/>• IT Consulting Services<4/>• Content Management Systems (CMS)<6/>• Custom Software Development<8/>• Customer Relationship Management (CRM) Systems",
+        "note": "Let’s create the software that knows your customers well and leads you to success together."
+      },
+      "healthcare": {
+        "header": "healthcare",
+        "p1": "<0>We integrate engineering</0> excellence with a deep understanding of the healthcare and life sciences industry. Our dedicated experts help clients transform the way they do business – improving patient experience, reducing costs and enhancing productivity.",
+        "p2": "<0>Get a strong track</0> record of web development and complex system integrations. Design delicate machine learning algorithms based on the latest innovative technologies.",
+        "p3": "<0>Analyzing</0> a huge number of inputs, we help you be patient-focused and easily manage all important information",
+        "p4": "<0>Customized development</0> of web and app software<2/>Integrated health solutions<4/>• Automation of daily tech workflow<6/>• Patient engagement tools and incentive<8/>• Healthcare oriented CRMs (Customer Relationship Management Systems)<10/>• Business consulting",
+        "note": "We know that correct information at the place of patient care causes us to saved lives."
+      },
+      "finance": {
+        "header": "finance",
+        "p1": "<0>Technology plays a progressively crucial role</0> in the financial industry, and effective and high-security software solutions help financial institutions follow changing markets, as well as identify and disqualify many gaps. So we understand that such FinTech complex systems need to be fast, reliable and error-free.",
+        "p2": "<0>Our specialists</0> apply an individual approach to every product development while using innovative technology for years as well.",
+        "p3": "<0>For clients performing</0> in financial services, SPDev team provides professional help in the following areas:<2/>• Web and App development for a social trading and investment startup and support for the existing one<4/>• Customer Relationship Management (CRM) Systems<6/>• Data storage solutions<8/>• Integration of accounting and reporting systems<10/>• Solutions for managing transactions and payments<12/>• Supporting and consulting software development operations",
+        "note": "With our team, you can always be calm, because in any changes we will be flexible and agile enough to meet your needs even in the middle of the current project."
+      }
+    }
   },
   "services": {
     "name": "services",

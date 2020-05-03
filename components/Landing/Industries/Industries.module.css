@@ -1,0 +1,77 @@
+.root {
+  height: 100vh;
+  min-height: var(--min-section-height);
+  max-height: 75rem;
+}
+
+.sl {
+  margin-top: 1rem;
+  width: 100%;
+  height: 100%;
+}
+
+.slBg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 130%;
+  height: 108%;
+  background-size: cover;
+  background-position: center;
+  filter: contrast(80%) brightness(38%);
+}
+
+.slCon {
+  height: calc(100vh - 10rem);
+  max-height: calc(75rem - 3rem);
+  min-height: calc(var(--min-section-height) - 3rem); 
+  background-color: rgba(17, 17, 17, .3);
+  max-width: 43%;
+  position: absolute;
+  bottom: 0;
+  left: 45%;
+  padding: 0 2.5rem;
+}
+
+.slH {
+  font-size: 3.3rem;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  margin-top: 1.5rem;
+}
+
+.slWc {
+  overflow: hidden;
+}
+
+.slC {
+  margin-top: 1.5rem;
+  color: #fff;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: 300;
+  overflow-y: auto;
+  max-height: calc(100vh - 19rem);
+  min-height: calc(var(--min-section-height) - 19rem);
+  width: 100%;
+  padding-right: 18px;
+  box-sizing: content-box;
+}
+
+.slCL {
+  max-height: calc(100vh - 24rem);
+  min-height: calc(var(--min-section-height) - 24rem);
+}
+
+.slP {
+  margin-top: 1rem;
+}
+
+.slPn {
+  margin-top: 2rem;
+}
+
+.slCa {
+  margin-top: 2.5rem;
+}

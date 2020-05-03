@@ -8,7 +8,7 @@ import styles from "./ContactUs.module.css";
 import Checkbox from "../common/Checkbox";
 
 const ContactUs: FC = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("landing");
   const ukraine = t("contact_us.contacts.ukraine", "ukraine");
   const address = useRef([
     {

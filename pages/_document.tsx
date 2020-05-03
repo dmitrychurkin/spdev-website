@@ -21,7 +21,7 @@ class CustomizedDocument extends Document {
           <link rel="manifest" href="/manifest.json" />
           <link rel="icon" href="/favicon.ico" />
           <link
-            href="//fonts.googleapis.com/css?family=Montserrat:400,500,700|Roboto&display=swap"
+            href="//fonts.googleapis.com/css?family=Montserrat:300,400,500,700|Roboto&display=swap"
             rel="stylesheet"
           />
           <script
