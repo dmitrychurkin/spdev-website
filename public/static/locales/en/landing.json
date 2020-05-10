@@ -90,7 +90,8 @@
       "number": "Phone number",
       "email": "E-mail",
       "description": "Description",
-      "checkbox": "I accept <1>Term of service</1> etc."
+      "checkbox": "I accept <1>Term of service</1> etc.",
+      "send": "send"
     },
     "contacts": {
       "title": "<0>connect</0> with us",

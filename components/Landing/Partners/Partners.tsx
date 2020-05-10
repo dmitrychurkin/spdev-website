@@ -12,7 +12,7 @@ const Partners: FC = () => {
     <Element name={ScrollLabels.PARTNERS}>
       <section>
         <SectionLabel>{t("partners.name", "partners")}</SectionLabel>
-        <SectionTitle>
+        <SectionTitle className={styles.text}>
           <Trans i18nKey="services.title">
             Quis non do tempor sunt ex enim exercitation commodo commodo sint ea
             elit non <br /> exercitation. Labore reprehenderit nostrud sunt

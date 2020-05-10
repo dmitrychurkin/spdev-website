@@ -9,7 +9,7 @@
   background-size: cover;
   position: relative;
   height: 100vh;
-  min-height: var(--min-section-height);
+  min-height: 35rem;
 }
 
 .main {
@@ -19,15 +19,20 @@
   /* width: calc(100% - var(--stripe-padding) * 2); refer Stripe.module#.root */
   left: 0;
   right: 0;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 1.5rem;
 }
 
 .logo {
   background: url("../spdev_logo.svg") no-repeat;
+  background-size: contain;
   height: 15rem;
   position: absolute;
-  bottom: calc(100% + 5.5rem);
-  width: 40rem;
   left: -7%;
+  bottom: 0;
+  width: 100%;
+  max-width: 30rem;
 }
 
 .logoText {
@@ -41,23 +46,22 @@
 }
 
 .title {
-  font-size: 1.5rem;
-  line-height: 1.813rem;
+  font-size: 1.125rem;
+  line-height: 1.375rem;
 }
 
 .sub {
-  margin-top: 1.5rem;
-  font-size: 1.125rem;
-  line-height: 1.375rem;
   opacity: 0.6;
+  display: none;
 }
 
 .btn {
   margin-left: 3rem;
+  margin-top: 1.5rem;
 }
 
 .bottomText {
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   position: absolute;
@@ -86,4 +90,88 @@
   width: 0.8rem;
   height: 0.5rem;
   transform: translateY(100%);
+}
+
+@media (min-width: 27rem) {
+  .logo {
+    bottom: 2rem;
+  }
+}
+
+@media (min-width: 30rem) {
+  .logo {
+    bottom: 3rem;
+  }
+}
+
+@media (min-width: 37rem) {
+  .logo {
+    bottom: 6rem;
+  }
+
+  .sub {
+    display: block;
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+
+  .bottomText {
+    display: flex;
+  }
+}
+
+@media (min-width: 43rem) {
+  .logo {
+    bottom: 6rem;
+  }
+
+  .sub {
+    margin-top: 1.5rem;
+  }
+}
+
+@media (min-width: 46.375rem) {
+  .logo {
+    bottom: 5rem;
+  }
+}
+
+@media (min-width: 50rem) {
+  .logo {
+    bottom: 6rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    line-height: 1.813rem;
+  }
+
+  .sub {
+    font-size: 1.125rem;
+    line-height: 1.375rem;
+  }
+}
+
+@media (min-width: 59.5rem) {
+  .root {
+    min-height: var(--min-section-height);
+  }
+
+  .main {
+    padding: 2.5rem 3rem;
+    flex-direction: row;
+    align-items: initial;
+  }
+
+  .logo {
+    background-size: cover;
+    max-width: 40rem;
+    bottom: calc(100% + 4rem);
+  }
+}
+
+@media (min-width: 74.25rem) {
+  .logo {
+    bottom: calc(100% + 5.5rem);
+  }
 }

@@ -1,21 +1,21 @@
 .root {
-  /* TODO: replace all px to rem */
   background: var(--background);
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2), 0px 2px 1px rgba(0, 0, 0, 0.12),
-    0px 1px 1px rgba(0, 0, 0, 0.14);
-  border-radius: 24px;
-  border: 2px solid #fff;
-  padding: 12px 24px;
+  box-shadow: 0rem 0.063rem 0.188rem rgba(0, 0, 0, 0.2),
+    0rem 0.125rem 0.063rem rgba(0, 0, 0, 0.12),
+    0rem 0.063rem 0.063rem rgba(0, 0, 0, 0.14);
+  border-radius: 1.5rem;
+  border: 0.125rem solid #fff;
+  padding: 0.5rem 1rem;
   letter-spacing: 0.047rem;
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1.5rem;
   font-weight: bold;
   font-family: inherit;
-  font-size: 1.125rem;
-  line-height: 1.5rem;
   text-transform: uppercase;
-  color: #fff;
-  outline: transparent;
   cursor: pointer;
   white-space: nowrap;
+  outline: transparent;
 }
 
 .round {
@@ -27,6 +27,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2), 0px 1px 10px rgba(0, 0, 0, 0.12),
-    0px 4px 5px rgba(0, 0, 0, 0.14);
+  box-shadow: 0rem 0.125rem 0.25rem rgba(0, 0, 0, 0.2),
+    0rem 0.063rem 0.625rem rgba(0, 0, 0, 0.12),
+    0rem 0.25rem 0.313rem rgba(0, 0, 0, 0.14);
+}
+
+@media (min-width: 50rem) {
+  .root {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+  }
+
+  .root:not(.round) {
+    padding: 0.75rem 1.5rem;
+  }
 }

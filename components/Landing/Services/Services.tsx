@@ -1,6 +1,7 @@
 import React, { memo, FC, useState, useRef } from "react";
 import { useTranslation, Trans } from "react-i18next";
 import { Element } from "react-scroll";
+import clsx from "clsx";
 import SectionLabel from "../common/SectionLabel";
 import SectionTitle from "../common/SectionTitle";
 import { ScrollLabels } from "../common/Menu";
@@ -137,7 +138,7 @@ const Services: FC = () => {
     <Element name={ScrollLabels.SERVICES}>
       <section className={styles.root}>
         <SectionLabel>{t("services.name", "services")}</SectionLabel>
-        <SectionTitle>
+        <SectionTitle className={styles.servicesText}>
           <Trans i18nKey="services.title">
             Quis non do tempor sunt ex enim exercitation commodo commodo sint ea
             elit non <br /> exercitation. Labore reprehenderit nostrud sunt
@@ -156,8 +157,11 @@ const Services: FC = () => {
 };
 
 function withTitle(className: string) {
-  return (Title: JSX.Element) => (props: { isActive: boolean }) => (
-    <ServiceTitle {...props} className={className}>
+  return (Title: JSX.Element) => (props: {
+    isActive: boolean;
+    className?: string;
+  }) => (
+    <ServiceTitle {...props} className={clsx(className, props.className)}>
       {Title}
     </ServiceTitle>
   );

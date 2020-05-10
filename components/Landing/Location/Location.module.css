@@ -55,14 +55,19 @@
   left: 0;
   right: 0;
   background: rgba(0, 0, 0, 0.38);
+  flex-direction: column-reverse;
+  align-items: flex-start;
 }
 
 .social,
 .actions {
   display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
 }
 
 .socialLink {
+  margin-top: 1.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -79,4 +84,12 @@
 
 .btn:first-child {
   margin-right: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 57rem) {
+  .stripe {
+    flex-direction: row;
+    align-items: initial;
+  }
 }

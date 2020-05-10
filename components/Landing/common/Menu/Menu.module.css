@@ -2,8 +2,8 @@
   display: flex;
   align-items: center;
   position: fixed;
-  bottom: 3.375rem;
-  left: 3.375rem;
+  bottom: 1.375rem;
+  left: 1.375rem;
   text-transform: uppercase;
   color: #fff;
   user-select: none;
@@ -54,6 +54,7 @@
 }
 
 .label {
+  display: none;
   position: absolute;
   bottom: 0.8rem;
   left: 4rem;
@@ -154,4 +155,17 @@
   transform: rotate(-90deg);
   transition: bottom 0.075s ease,
     transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+@media (min-width: 81rem) {
+  .root {
+    bottom: 3.375rem;
+    left: 3.375rem;
+  }
+}
+
+@media (min-width: 112.5rem) {
+  .label {
+    display: initial;
+  }
 }

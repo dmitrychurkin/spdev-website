@@ -1,6 +1,9 @@
 import React, { memo, FC, useRef } from "react";
 import { useTranslation } from "react-i18next";
+import i18n from "i18n";
 import styles from "./Footer.module.css";
+
+const { Link } = i18n;
 
 const Footer: FC = () => {
   const { t } = useTranslation("landing");
@@ -17,7 +20,7 @@ const Footer: FC = () => {
       <nav className={styles.nav}>
         {nav.current.map(({ text }) => (
           <div key={text} className={styles.item}>
-            {text}
+            <Link href="/">{text}</Link>
           </div>
         ))}
       </nav>

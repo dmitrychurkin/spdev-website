@@ -24,17 +24,16 @@
 .slCon {
   height: calc(100vh - 10rem);
   max-height: calc(75rem - 3rem);
-  min-height: calc(var(--min-section-height) - 3rem); 
-  background-color: rgba(17, 17, 17, .3);
-  max-width: 43%;
+  min-height: calc(var(--min-section-height) - 3rem);
+  background-color: rgba(17, 17, 17, 0.3);
   position: absolute;
   bottom: 0;
-  left: 45%;
+  left: 0;
   padding: 0 2.5rem;
 }
 
 .slH {
-  font-size: 3.3rem;
+  font-size: 1.5rem;
   font-weight: bold;
   color: #fff;
   text-transform: uppercase;
@@ -48,23 +47,21 @@
 .slC {
   margin-top: 1.5rem;
   color: #fff;
-  font-size: 1.125rem;
+  font-size: 0.9rem;
   line-height: 1.5rem;
   font-weight: 300;
   overflow-y: auto;
-  max-height: calc(100vh - 19rem);
-  min-height: calc(var(--min-section-height) - 19rem);
+  max-height: calc(100vh - 16rem);
   width: 100%;
   padding-right: 18px;
   box-sizing: content-box;
 }
 
 .slCL {
-  max-height: calc(100vh - 24rem);
-  min-height: calc(var(--min-section-height) - 24rem);
+  max-height: calc(100vh - 18rem);
 }
 
-.slP {
+.slP:not(:first-child) {
   margin-top: 1rem;
 }
 
@@ -74,4 +71,85 @@
 
 .slCa {
   margin-top: 2.5rem;
+}
+
+@media (min-width: 25rem) {
+  .slH {
+    font-size: 2rem;
+  }
+
+  .slC {
+    font-size: 1rem;
+    max-height: calc(100vh - 17rem);
+    min-height: calc(var(--min-section-height) - 17rem);
+  }
+
+  .slCL {
+    max-height: calc(100vh - 19.5rem);
+    min-height: calc(var(--min-section-height) - 19.5rem);
+  }
+}
+
+@media (min-width: 31.25rem) {
+  .slCon {
+    left: 5%;
+  }
+}
+
+@media (min-width: 37.5rem) {
+  .slH {
+    font-size: 2.5rem;
+  }
+
+  .slC {
+    max-height: calc(100vh - 18rem);
+    min-height: calc(var(--min-section-height) - 18rem);
+  }
+
+  .slCL {
+    max-height: calc(100vh - 21rem);
+    min-height: calc(var(--min-section-height) - 21rem);
+  }
+}
+
+@media (min-width: 41.25rem) {
+  .slCon {
+    left: 15%;
+  }
+}
+
+@media (min-width: 47.5rem) {
+  .slCon {
+    left: 25%;
+  }
+}
+
+@media (min-width: 53.75rem) {
+  .slCon {
+    left: 35%;
+  }
+}
+
+@media (min-width: 66.25rem) {
+  .slCon {
+    left: 45%;
+    max-width: 43%;
+  }
+}
+
+@media (min-width: 74.25rem) {
+  .slH {
+    font-size: 3.3rem;
+  }
+
+  .slC {
+    font-size: 1.125rem;
+    max-height: calc(100vh - 19rem);
+    min-height: calc(var(--min-section-height) - 19rem);
+  }
+
+  .slCL {
+    max-height: calc(100vh - 24rem);
+    min-height: calc(var(--min-section-height) - 24rem);
+  }
 }

@@ -4,8 +4,9 @@ import { Element } from "react-scroll";
 import { ScrollLabels } from "../common/Menu";
 import SectionLabel from "../common/SectionLabel";
 import Input from "../common/Input";
-import styles from "./ContactUs.module.css";
 import Checkbox from "../common/Checkbox";
+import Button from "../common/Button";
+import styles from "./ContactUs.module.css";
 
 const ContactUs: FC = () => {
   const { t } = useTranslation("landing");
@@ -84,6 +85,9 @@ const ContactUs: FC = () => {
                   </Trans>
                 }
               />
+              <Button type="submit" className={styles.btn}>
+                {t("contact_us.contact_form.send", "send")}
+              </Button>
             </form>
           </div>
           <div className={styles.contact}>
@@ -100,8 +104,12 @@ const ContactUs: FC = () => {
             {address.current.map(({ country, email, phone }, i) => (
               <div key={String(i)} className={styles.location}>
                 <div>{country}</div>
-                <div>{email}</div>
-                <div>{phone}</div>
+                <a className={styles.contactLink} href={`mailto:${email}`}>
+                  {email}
+                </a>
+                <a className={styles.contactLink} href={`tel:${phone}`}>
+                  {phone}
+                </a>
               </div>
             ))}
             <div className={styles.join}>

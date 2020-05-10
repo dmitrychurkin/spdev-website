@@ -8,6 +8,75 @@
   position: relative;
   overflow: hidden;
   transition: width 0.5s;
+  display: none;
+}
+
+.mobile {
+  display: block;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0.125rem 0.3rem rgba(0, 0, 0, 0.2),
+    0 0.06rem 0.6rem rgba(0, 0, 0, 0.12), 0 0.3rem 0.3rem rgba(0, 0, 0, 0.14);
+  border-radius: 0.75rem;
+  color: #fff;
+}
+
+.mobile:not(:first-child) {
+  margin-top: 5rem;
+}
+
+.mobile .img {
+  height: 100%;
+}
+
+.mobile .btn {
+  display: none;
+}
+
+.mobile .stripe {
+  display: block;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-top: 2rem;
+}
+
+.mobile .detail .title {
+  margin-left: 0;
+}
+
+.mobile .sub {
+  font-size: 1.2rem;
+  padding: 0 1rem;
+  line-height: 1.8rem;
+}
+
+.mobile .serviceTitle {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.mobile .sub br {
+  display: none;
+}
+
+.mobile .description {
+  opacity: 1;
+  margin-top: 0;
+  transform: none;
+  width: 100%;
+  font-size: 0.9rem;
+}
+
+.mobile .right {
+  margin-top: 1.5rem;
+  justify-content: flex-start;
+}
+
+.mobile .tech {
+  width: 2rem;
+  height: 2rem;
+  background-size: contain;
 }
 
 .large {
@@ -214,5 +283,82 @@
   }
   100% {
     opacity: 1;
+  }
+}
+
+@media (min-width: 26.563rem) {
+  .mobile .stripe {
+    margin-top: 6rem;
+  }
+
+  .mobile .serviceTitle {
+    font-size: 2.2rem;
+  }
+
+  .mobile .sub {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .mobile .description {
+    font-size: 1rem;
+  }
+
+  .mobile .tech {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+@media (min-width: 31.438rem) {
+  .mobile .serviceTitle {
+    font-size: 2.5rem;
+  }
+
+  .mobile .sub {
+    text-align: center;
+  }
+}
+
+@media (min-width: 37.063rem) {
+  .mobile .serviceTitle {
+    font-size: 3.5rem;
+  }
+
+  .mobile .sub {
+    font-size: 2.125rem;
+    line-height: 2.25rem;
+  }
+
+  .mobile .description {
+    font-size: 1.125rem;
+  }
+
+  .mobile .tech {
+    width: 4rem;
+    height: 4rem;
+  }
+}
+
+@media (min-width: 50rem) {
+  .mobile .stripe {
+    display: flex;
+    padding-left: 2rem;
+    margin-top: 6rem;
+  }
+
+  .mobile .right {
+    margin-top: 0;
+    margin-left: 1rem;
+  }
+}
+
+@media (min-width: 81rem) {
+  .root {
+    display: flex;
+  }
+
+  .mobile {
+    display: none;
   }
 }

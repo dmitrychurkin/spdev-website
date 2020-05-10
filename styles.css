@@ -15,7 +15,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: var(--background);
-  min-width: 81rem;
+  min-width: 18.75rem;
 }
 
 /* Google maps remove unnecessary attrs */

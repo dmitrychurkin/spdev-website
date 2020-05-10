@@ -15,25 +15,47 @@
   margin-top: 3.563rem;
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-.item,
-.copy {
+.copy,
+.item a {
   font-size: 0.875rem;
   line-height: 1.25rem;
   letter-spacing: 0.047rem;
   color: rgba(255, 255, 255, 0.6);
   padding: 0 1rem;
+  text-decoration: none;
 }
 
 .item:not(:last-child) {
-  border-right: 0.16rem solid rgba(255, 255, 255, 0.12);
+  margin-bottom: 2.5rem;
+  border-bottom: 0.16rem solid rgba(255, 255, 255, 0.12);
+  padding-bottom: 1rem;
 }
 
 .copy {
-  margin-top: 2.5rem;
+  margin-top: 5.5rem;
   margin-bottom: 5rem;
   color: rgba(255, 255, 255, 0.88);
   line-height: 1.063rem;
   text-align: center;
+}
+
+@media (min-width: 44rem) {
+  .nav {
+    flex-direction: row;
+    align-items: initial;
+  }
+
+  .item:not(:last-child) {
+    border-right: 0.16rem solid rgba(255, 255, 255, 0.12);
+    border-bottom: none;
+    padding-bottom: initial;
+  }
+
+  .copy {
+    margin-top: 2.5rem;
+  }
 }

@@ -5,7 +5,11 @@
 .wrapper {
   display: flex;
   justify-content: space-around;
+  align-items: center;
+  flex-direction: column-reverse;
   margin-top: 8.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 .title {
@@ -24,6 +28,7 @@
 .form {
   max-width: 28rem;
   width: 100%;
+  margin-top: 8.5rem;
 }
 
 .firstInput {
@@ -32,6 +37,14 @@
 
 .location {
   margin-top: 5rem;
+}
+
+.contactLink {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
 .contact .subtitle {
@@ -62,6 +75,12 @@
   color: #fff;
 }
 
+.btn {
+  display: block;
+  width: 11rem;
+  margin-top: 1.75rem;
+}
+
 .comeHere {
   color: var(--blue);
   display: flex;
@@ -73,5 +92,19 @@
 
 .comeHereIcon {
   height: 1.125rem;
+  width: 1.125rem;
   margin-left: 0.688rem;
+}
+
+@media (min-width: 75rem) {
+  .wrapper {
+    align-items: initial;
+    flex-direction: row;
+    padding-left: initial;
+    padding-right: initial;
+  }
+
+  .form {
+    margin-top: initial;
+  }
 }
