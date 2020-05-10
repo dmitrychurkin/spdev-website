@@ -27,6 +27,7 @@ class CustomizedDocument extends Document {
           <script
             src={`//maps.googleapis.com/maps/api/js?key=${process.env.GOOGLE_MAPS_API_KEY}&libraries=places,geometry`}
           />
+          <script src="//www.google.com/recaptcha/api.js" async defer />
         </Head>
         <body>
           <Main />

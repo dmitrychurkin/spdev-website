@@ -1,4 +1,4 @@
-import React, { memo, useRef, FC } from "react";
+import React, { memo, useRef, FC, useEffect, useCallback } from "react";
 import { useTranslation, Trans } from "react-i18next";
 import { Element } from "react-scroll";
 import { ScrollLabels } from "../common/Menu";
@@ -10,7 +10,9 @@ import styles from "./ContactUs.module.css";
 
 const ContactUs: FC = () => {
   const { t } = useTranslation("landing");
+
   const ukraine = t("contact_us.contacts.ukraine", "ukraine");
+
   const address = useRef([
     {
       country: `${ukraine}, ${t("contact_us.contacts.mariupol", "mariupol")}`,
@@ -26,6 +28,25 @@ const ContactUs: FC = () => {
       phone: "+380951086488",
     },
   ]);
+
+  const formRef = useRef<HTMLFormElement>(null);
+
+  useEffect(() => {
+    window.sendContactForm = (reCaptchaToken: string) => {
+      console.log("TODO: proceed to send contact form data", reCaptchaToken);
+    };
+  }, []);
+
+  const onClickSubmit = useCallback(
+    (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+      e.preventDefault();
+      if (formRef.current?.checkValidity()) {
+        window.grecaptcha.execute("recaptcha");
+      }
+    },
+    []
+  );
+
   return (
     <Element name={ScrollLabels.CONTACT_US}>
       <section className={styles.root}>
@@ -43,7 +64,7 @@ const ContactUs: FC = () => {
                 your project?
               </Trans>
             </div>
-            <form>
+            <form ref={formRef}>
               <Input
                 className={styles.firstInput}
                 tag="input"
@@ -85,7 +106,18 @@ const ContactUs: FC = () => {
                   </Trans>
                 }
               />
-              <Button type="submit" className={styles.btn}>
+              <div
+                id="recaptcha"
+                className="g-recaptcha"
+                data-sitekey={process.env.RECAPTCHA_V2_CLIENT}
+                data-callback="sendContactForm"
+                data-size="invisible"
+              />
+              <Button
+                type="submit"
+                className={styles.btn}
+                onClick={onClickSubmit}
+              >
                 {t("contact_us.contact_form.send", "send")}
               </Button>
             </form>
