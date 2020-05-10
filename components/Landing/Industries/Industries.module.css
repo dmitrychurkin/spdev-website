@@ -22,7 +22,7 @@
 }
 
 .slCon {
-  height: calc(100vh - 10rem);
+  height: calc(100vh - 3rem);
   max-height: calc(75rem - 3rem);
   min-height: calc(var(--min-section-height) - 3rem);
   background-color: rgba(17, 17, 17, 0.3);
