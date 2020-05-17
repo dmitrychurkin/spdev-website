@@ -1,37 +1,26 @@
-import React, {
-  FC,
-  memo,
-  DetailedHTMLProps,
-  InputHTMLAttributes,
-  useState,
-  useRef,
-  ChangeEvent,
-} from "react";
+import React, { FC, memo, useState, useRef } from "react";
 import clsx from "clsx";
 import styles from "./Input.module.css";
 
 type Props = {
-  readonly tag: string;
-  readonly className?: string;
+  readonly tag?: string;
   readonly withCounter?: boolean;
-  readonly maxCount?: number;
-} & DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
+} & React.HTMLProps<HTMLInputElement | HTMLTextAreaElement>;
 const Input: FC<Props> = ({
-  tag: Element,
+  tag: Element = "input",
+  withCounter = false,
   className,
   maxLength,
   onChange,
-  withCounter = false,
-  maxCount = 0,
-  ...other
+  ...otherProps
 }) => {
   const [count, setCount] = useState(0);
   const inputAdditionalAttrs = useRef({
-    onChange: (e: ChangeEvent<HTMLInputElement>) => {
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => {
       if (typeof onChange === "function") {
         onChange(e);
       }
-      if (typeof maxCount === "number" || withCounter) {
+      if (withCounter) {
         setCount(e.target.value.length);
       }
     },
@@ -39,12 +28,12 @@ const Input: FC<Props> = ({
 
   return (
     <div className={clsx(styles.root, className)}>
-      <Element {...inputAdditionalAttrs.current} {...other} />
+      <Element {...inputAdditionalAttrs.current} {...otherProps} />
       <div className={styles.focuser} />
-      {((typeof maxLength === "number" && maxLength > 0) || maxCount > 0) && (
+      {withCounter && typeof maxLength === "number" && maxLength > 0 && (
         <div className={styles.counter}>
           <span className={styles.counterCurrent}>{count}</span>
-          <span>/{maxLength ?? maxCount}</span>
+          <span>/{maxLength}</span>
         </div>
       )}
     </div>

@@ -3,13 +3,17 @@ import clsx from "clsx";
 import styles from "./Checkbox.module.css";
 
 type Props = {
-  readonly label?: string | JSX.Element;
-  readonly className?: string;
-};
-const Checkbox: FC<Props> = ({ label, className }) => (
+  readonly labelElement?: JSX.Element;
+} & React.HTMLProps<HTMLInputElement>;
+const Checkbox: FC<Props> = ({
+  labelElement,
+  label,
+  className,
+  ...otherProps
+}) => (
   <label className={clsx(styles.root, className)}>
-    <input type="checkbox" />
-    <span>{label}</span>
+    <input type="checkbox" {...otherProps} />
+    <span>{label ?? labelElement}</span>
   </label>
 );
 

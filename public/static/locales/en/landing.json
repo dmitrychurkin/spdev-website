@@ -91,7 +91,8 @@
       "email": "E-mail",
       "description": "Description",
       "checkbox": "I accept <1>Term of service</1> etc.",
-      "send": "send"
+      "send": "send",
+      "result_success": "Form successfully sent"
     },
     "contacts": {
       "title": "<0>connect</0> with us",

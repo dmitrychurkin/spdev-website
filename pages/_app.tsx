@@ -2,6 +2,7 @@ import React from "react";
 import { Provider } from "react-redux";
 import withRedux, { ReduxWrapperAppProps } from "next-redux-wrapper";
 import App from "next/app";
+import { ToastProvider } from "react-toast-notifications";
 import i18n from "i18n";
 import makeStore from "store";
 import { RootState } from "store/reducer";
@@ -16,8 +17,10 @@ class CustomizedApp extends App<ReduxWrapperAppProps<RootState>> {
     const { Component, pageProps, store } = this.props;
     return (
       <Provider store={store}>
-        <Component {...pageProps} />
-        <Preloader />
+        <ToastProvider>
+          <Component {...pageProps} />
+          <Preloader />
+        </ToastProvider>
       </Provider>
     );
   }

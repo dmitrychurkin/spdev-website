@@ -1,6 +1,6 @@
 module.exports = {
   poweredByHeader: false,
   env: {
-    customKey: process.env.RECAPTCHA_V2_CLIENT,
+    RECAPTCHA_V2_CLIENT: process.env.RECAPTCHA_V2_CLIENT,
   },
 };
