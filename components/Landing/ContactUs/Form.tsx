@@ -165,6 +165,9 @@ const Form: FC = () => {
           }
           required
         />
+        <span className={styles.debug}>
+          {String(process.env.RECAPTCHA_V2_CLIENT)}
+        </span>
         <ReCAPTCHA
           sitekey={String(process.env.RECAPTCHA_V2_CLIENT)}
           size="normal"
