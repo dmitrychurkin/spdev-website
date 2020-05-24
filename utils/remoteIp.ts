@@ -2,12 +2,6 @@ import { NextApiRequest } from "next";
 
 export default (req: NextApiRequest) => {
   const ipAddr = req.headers["x-forwarded-for"];
-  console.log(
-    `req.headers["x-forwarded-for"] ipAddr => `,
-    Array.isArray(ipAddr),
-    ipAddr?.length,
-    ipAddr
-  );
   if (typeof ipAddr === "string") {
     return ipAddr.split(",").slice(-1)[0];
   }
