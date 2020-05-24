@@ -35,6 +35,9 @@ const Form: FC = () => {
   const { addToast } = useToasts();
 
   const formRef = useRef<HTMLFormElement>(null);
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
+  const termsRef = useRef<HTMLInputElement>(null);
+
   const [isRequestSent, setRequestState] = useState(false);
 
   const [formValues, setFormValues] = useState<ContactForm>({ ...formInputs });
@@ -89,7 +92,17 @@ const Form: FC = () => {
                 "Form successfully sent"
               ),
               notificationDefaultOptions,
-              () => setFormValues({ ...formInputs })
+              () => {
+                setFormValues({ ...formInputs });
+                const { current: termsCheckbox } = termsRef;
+                if (termsCheckbox instanceof HTMLInputElement) {
+                  termsCheckbox.checked = false;
+                }
+                const { current: recaptcha } = recaptchaRef;
+                if (typeof recaptcha?.reset === "function") {
+                  recaptcha.reset();
+                }
+              }
             );
           }
           addToast(await response.text(), {
@@ -156,6 +169,7 @@ const Form: FC = () => {
           maxLength={460}
         />
         <Checkbox
+          ref={termsRef}
           className={styles.checkbox}
           labelElement={
             <Trans i18nKey="contact_us.contact_form.checkbox">
@@ -166,6 +180,7 @@ const Form: FC = () => {
           required
         />
         <ReCAPTCHA
+          ref={recaptchaRef}
           sitekey={String(process.env.RECAPTCHA_V2_CLIENT)}
           size="normal"
           theme="dark"

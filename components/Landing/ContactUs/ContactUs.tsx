@@ -56,7 +56,8 @@ const ContactUs: FC = () => {
                 </a>
               </div>
             ))}
-            <div className={styles.join}>
+            {/* Temporary disabled */}
+            {/* <div className={styles.join}>
               {t("contact_us.contacts.join", "want to join our team?")}
             </div>
             <div className={styles.comeHere}>
@@ -64,7 +65,7 @@ const ContactUs: FC = () => {
               <svg className={styles.comeHereIcon}>
                 <use xlinkHref="#link_ref" />
               </svg>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>

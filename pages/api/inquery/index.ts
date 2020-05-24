@@ -1,5 +1,4 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import Mailgun from "mailgun-js";
 import mailer from "utils/mailer";
 import captchaValidator, {
   CaptchaValidationParams,
@@ -8,7 +7,7 @@ import remoteIp from "utils/remoteIp";
 
 export default async (
   req: NextApiRequest,
-  res: NextApiResponse<Mailgun.messages.SendResponse | string>
+  res: NextApiResponse<string | undefined>
 ) => {
   if (req.method === "POST") {
     const {
@@ -25,16 +24,16 @@ export default async (
       });
 
       if (!response.ok) {
-        return res.status(400).send(await response.text());
+        return res.status(400).end();
       }
 
       const captchaValidationResult = await response.json();
 
       if (!captchaValidationResult.success) {
-        return res.status(400).json(captchaValidationResult);
+        return res.status(400).end();
       }
 
-      const result = await mailer({
+      await mailer({
         to: String(process.env.EMAIL_RECIPIENTS),
         from: email,
         subject: name,
@@ -43,13 +42,15 @@ export default async (
           ${phone}, ${name}
         `,
       });
-      res.send(result);
+      return res.status(201).end();
     } catch (err) {
-      res.status(err.statusCode ?? 400).send(err.message);
+      const response = res.status(err.statusCode ?? 500);
+      return process.env.NODE_ENV === "development"
+        ? response.send(err.message)
+        : response.end();
     }
-    return;
   }
-  res.status(400);
+  res.status(400).end();
 };
 
 export interface ContactForm {
