@@ -17,6 +17,7 @@ const handle = app.getRequestHandler();
 
   if (!isDev) {
     server.enable("trust proxy");
+    server.disable("x-powered-by");
   }
 
   server.use(nextI18NextMiddleware(nextI18next));
