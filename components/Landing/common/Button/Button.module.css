@@ -16,6 +16,13 @@
   cursor: pointer;
   white-space: nowrap;
   outline: transparent;
+  transition: 0.3s;
+}
+
+.root:disabled {
+  color: #b1a8a8;
+  border-color: #b1a8a8;
+  cursor: context-menu;
 }
 
 .round {

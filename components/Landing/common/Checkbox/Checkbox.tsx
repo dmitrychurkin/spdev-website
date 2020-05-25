@@ -1,16 +1,18 @@
-import React, { memo, FC } from "react";
+import React, { memo, forwardRef, ForwardRefRenderFunction } from "react";
 import clsx from "clsx";
 import styles from "./Checkbox.module.css";
 
 type Props = {
-  readonly label?: string | JSX.Element;
-  readonly className?: string;
-};
-const Checkbox: FC<Props> = ({ label, className }) => (
+  readonly labelElement?: JSX.Element;
+} & React.HTMLProps<HTMLInputElement>;
+const Checkbox: ForwardRefRenderFunction<HTMLInputElement, Props> = (
+  { labelElement, label, className, ...otherProps },
+  ref
+) => (
   <label className={clsx(styles.root, className)}>
-    <input type="checkbox" />
-    <span>{label}</span>
+    <input ref={ref} type="checkbox" {...otherProps} />
+    <span>{label ?? labelElement}</span>
   </label>
 );
 
-export default memo(Checkbox);
+export default memo(forwardRef(Checkbox));

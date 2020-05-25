@@ -2,154 +2,168 @@
   height: 100vh;
   min-height: var(--min-section-height);
   max-height: 75rem;
+  padding: 0 4rem;
 }
 
-.sl {
-  margin-top: 1rem;
+.container {
   width: 100%;
+  height: 100%;
+  perspective: 50vw;
+  padding-bottom: 1rem;
+}
+
+.content {
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.slider {
+  width: 66%;
+  height: 100%;
+  margin-left: -2.2rem;
+  transform: rotateY(45deg);
+  transform-origin: 0 50%;
+}
+
+.gradientWrap {
+  position: absolute;
+  top: 0;
+  left: -4rem;
+  width: calc(71% + 6.7rem);
+  bottom: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.gradient {
+  position: absolute;
+  left: -3rem;
+  right: 0;
+  top: 100%;
+  margin-top: -2rem;
+  height: 100vw;
+  display: block;
+  content: "";
+  background: rgba(196, 196, 196, 0.18);
+  transform: rotateY(45deg) skewY(-1.5deg);
+  transform-origin: 0 0;
+}
+
+.slider :global(.slick-list),
+.slider :global(.slick-track),
+.slider :global(.slick-slide),
+.slider :global(.slick-slide > div) {
   height: 100%;
 }
 
-.slBg {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 130%;
-  height: 108%;
-  background-size: cover;
-  background-position: center;
-  filter: contrast(80%) brightness(38%);
+.slider :global(.slick-list) {
+  overflow: visible;
 }
 
-.slCon {
-  height: calc(100vh - 3rem);
-  max-height: calc(75rem - 3rem);
-  min-height: calc(var(--min-section-height) - 3rem);
-  background-color: rgba(17, 17, 17, 0.3);
+.slide {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 0 2rem;
+  outline: none !important;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.descWrap {
+  position: absolute;
+  left: 50%;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.desc {
   position: absolute;
   bottom: 0;
   left: 0;
-  padding: 0 2.5rem;
+  right: 0;
+  max-height: 100%;
+  background: rgba(17, 17, 17, 0.9);
+  color: white;
+  padding: 64px 40px 80px;
 }
 
-.slH {
-  font-size: 1.5rem;
+.text {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.text p {
+  margin-top: 20px;
+  letter-spacing: 0.75px;
+}
+
+.text h1,
+.text h2,
+.text h3,
+.text h4,
+.text h5,
+.text h6 {
   font-weight: bold;
-  color: #fff;
+  font-size: 80px;
+  line-height: 98px;
+  letter-spacing: 0.5px;
   text-transform: uppercase;
-  margin-top: 1.5rem;
 }
 
-.slWc {
-  overflow: hidden;
+.fadeSlider,
+.fadeSlider :global(.slick-list),
+.fadeSlider :global(.slick-track),
+.fadeSlider :global(.slick-slide),
+.fadeSlider :global(.slick-slide > div) {
+  height: 100%;
 }
 
-.slC {
-  margin-top: 1.5rem;
-  color: #fff;
-  font-size: 0.9rem;
-  line-height: 1.5rem;
-  font-weight: 300;
-  overflow-y: auto;
-  max-height: calc(100vh - 16rem);
-  width: 100%;
-  padding-right: 18px;
-  box-sizing: content-box;
+.fadeSlider :global(.slick-slide:not(.slick-current)) {
+  transition: opacity 200ms ease-out 0s, visibility 10ms ease 200ms !important;
 }
 
-.slCL {
-  max-height: calc(100vh - 18rem);
+.fadeSlider :global(.slick-slide.slick-current) {
+  transition: opacity 600ms ease 200ms, visibility 10ms ease 200ms !important;
 }
 
-.slP:not(:first-child) {
-  margin-top: 1rem;
+.nav {
+  position: absolute;
+  left: -2rem;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
-.slPn {
-  margin-top: 2rem;
+.nav li {
+  display: block;
+  margin: 1rem 0;
 }
 
-.slCa {
-  margin-top: 2.5rem;
+.button {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: #666666;
+  box-shadow: none;
+  border: none;
+  cursor: pointer;
+  outline: none !important;
+  transition: background-color 0.3s ease;
 }
 
-@media (min-width: 25rem) {
-  .slH {
-    font-size: 2rem;
-  }
-
-  .slC {
-    font-size: 1rem;
-    max-height: calc(100vh - 17rem);
-    min-height: calc(var(--min-section-height) - 17rem);
-  }
-
-  .slCL {
-    max-height: calc(100vh - 19.5rem);
-    min-height: calc(var(--min-section-height) - 19.5rem);
-  }
-}
-
-@media (min-width: 31.25rem) {
-  .slCon {
-    left: 5%;
-  }
-}
-
-@media (min-width: 37.5rem) {
-  .slH {
-    font-size: 2.5rem;
-  }
-
-  .slC {
-    max-height: calc(100vh - 18rem);
-    min-height: calc(var(--min-section-height) - 18rem);
-  }
-
-  .slCL {
-    max-height: calc(100vh - 21rem);
-    min-height: calc(var(--min-section-height) - 21rem);
-  }
-}
-
-@media (min-width: 41.25rem) {
-  .slCon {
-    left: 15%;
-  }
-}
-
-@media (min-width: 47.5rem) {
-  .slCon {
-    left: 25%;
-  }
-}
-
-@media (min-width: 53.75rem) {
-  .slCon {
-    left: 35%;
-  }
-}
-
-@media (min-width: 66.25rem) {
-  .slCon {
-    left: 45%;
-    max-width: 43%;
-  }
-}
-
-@media (min-width: 74.25rem) {
-  .slH {
-    font-size: 3.3rem;
-  }
-
-  .slC {
-    font-size: 1.125rem;
-    max-height: calc(100vh - 19rem);
-    min-height: calc(var(--min-section-height) - 19rem);
-  }
-
-  .slCL {
-    max-height: calc(100vh - 24rem);
-    min-height: calc(var(--min-section-height) - 24rem);
-  }
+.button.active {
+  background: #fff;
+  box-shadow: 0 0 1rem #fff;
+  cursor: default;
 }
